@@ -3,8 +3,10 @@ package com.stackroute.model;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
+@Component
 @Data
 @Document(collection = "userCollection")
 public class UserProfile {

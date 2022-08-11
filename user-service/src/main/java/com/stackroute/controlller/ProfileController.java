@@ -25,10 +25,10 @@ public ResponseEntity<?> getProfile(@PathVariable("email") String email){
     return ResponseEntity.ok(get);
 
 }
-    @PutMapping("/update")
-    public ResponseEntity<?> updateProfile(@RequestBody UserProfile userProfile ){
+    @PutMapping("/update/{email}")
+    public ResponseEntity<?> updateProfile(@RequestBody UserProfile userProfile,@PathVariable String email){
 
-        UserProfile update=this.userService.updateProfile(userProfile);
+        UserProfile update=this.userService.updateProfile(userProfile,email);
         return ResponseEntity.ok(update);
     }
 }
