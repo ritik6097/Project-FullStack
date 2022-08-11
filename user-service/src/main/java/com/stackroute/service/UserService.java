@@ -3,9 +3,7 @@ package com.stackroute.service;
 import com.stackroute.model.UserProfile;
 import com.stackroute.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 
 @Service
 public class UserService  implements UserServiceInterface{
@@ -33,5 +31,19 @@ public class UserService  implements UserServiceInterface{
         save.setContactNumber(userProfile.getContactNumber());
         UserProfile updated=this.userRepository.save(save);
         return updated;
+    }
+    @Override
+    public void deleteProfile(String email){
+          this.userRepository.deleteByEmail(email);
+    }
+    @Override
+    public boolean isUserPresent(String email){
+       UserProfile userfound =this.userRepository.findByEmail(email);
+       if(userfound==null)
+
+       {
+           return false;
+       }
+       return true;
     }
 }
