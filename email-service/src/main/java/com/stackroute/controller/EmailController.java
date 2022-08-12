@@ -5,11 +5,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.stackroute.emailservice.EmailServiceImpl;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
+@RequestMapping("/login")
+@Api(value="email service",description = "email service controller")
 public class EmailController {
 	
 	private Logger logger = LoggerFactory.getLogger(EmailController.class);
@@ -18,7 +24,7 @@ public class EmailController {
 	private EmailServiceImpl emailservice;
 	
 	
-	@RequestMapping("/login/{emailId}/home")
+	@RequestMapping(value="/{emailId}/home",method=RequestMethod.GET)
 	public void sendMail(@PathVariable String emailId) {
 		
 		try {
