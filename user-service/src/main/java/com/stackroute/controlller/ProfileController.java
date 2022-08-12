@@ -1,9 +1,13 @@
 package com.stackroute.controlller;
 
+
+import com.stackroute.exception.UserAlreadyExistException;
+import com.stackroute.exception.UserNotFoundException;
 import com.stackroute.model.UserProfile;
 import com.stackroute.repo.UserRepository;
 import com.stackroute.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,21 +18,41 @@ public class ProfileController {
     private UserService userService;
 
     @PostMapping("/save")
-    public ResponseEntity<?> addProfile(@RequestBody UserProfile userProfile){
-        UserProfile save= this.userService.addProfile(userProfile);
-        return ResponseEntity.ok(save);
+    public ResponseEntity<?> addProfileController(@RequestBody UserProfile userProfile) throws Exception {
+
+         if (this.userService.isUserPresent(userProfile.getEmail())) {
+          throw new UserAlreadyExistException("user already exist");
+       //  return ResponseEntity.ok("user already exist");
+
+     }
+
+       UserProfile saveRTP= this.userService.addProfile(userProfile);
+        return ResponseEntity.ok(saveRTP);
 
     }
 @GetMapping("/getprofile/{email}")
-public ResponseEntity<?> getProfile(@PathVariable("email") String email){
-    UserProfile get=this.userService.getProfile(email);
-    return ResponseEntity.ok(get);
+public ResponseEntity<?> getProfileController(@PathVariable("email") String email) throws Exception {
+
+    UserProfile getRTP=this.userService.getProfile(email);
+    if(getRTP==null){
+       // ExceptionResponse er= new ExceptionResponse();
+        throw new UserNotFoundException("this user is not available !!");
+
+       // return ResponseEntity.ok("user not found");
+    }
+    return ResponseEntity.ok(getRTP);
 
 }
-    @PutMapping("/update")
-    public ResponseEntity<?> updateProfile(@RequestBody UserProfile userProfile ){
+    @PutMapping("/update/{email}")
+    public ResponseEntity<?> updateProfileController(@RequestBody UserProfile userProfile,@PathVariable String email){
 
-        UserProfile update=this.userService.updateProfile(userProfile);
-        return ResponseEntity.ok(update);
+        UserProfile updateRTP=this.userService.updateProfile(userProfile,email);
+        return ResponseEntity.ok(updateRTP);
     }
+    @DeleteMapping("/deleteprofile/{email}")
+    public ResponseEntity <?> deleteProfile(@PathVariable("email") String email){
+         this.userService.deleteProfile(email);
+         return ResponseEntity.ok("your profile has been deleted successfully");
+    }
+
 }
