@@ -1,13 +1,12 @@
 package com.stackroute.Repository;
 
 import com.stackroute.TaxModel.Tax;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;
 
 
-@Repository
-public interface UserRepository extends JpaRepository<Tax,Long> {
+public interface UserRepository extends MongoRepository<Tax,Long> {
     Optional<Tax> findTaxById(Long id);
 }
