@@ -37,12 +37,13 @@ public class Tax {
 
     private Integer donationToCharity;
 
-    private Integer interestOnEduationLoan;
+    //private Integer interestOnEducationLoan;
 
     private Integer interestOnHousingLoan;
 
     private Integer employeeContributionNPS;
 
+    private Double TaxCalculated;
 
 
 }

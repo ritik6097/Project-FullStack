@@ -27,7 +27,8 @@ public class TaxService {
     }
 
 
-    double[] arr=new double[1];
+    //double[] arr=new double[1];
+    double result;
 
     public List<Tax> getDetail() {
         return userRepository.findAll();
@@ -46,10 +47,11 @@ public class TaxService {
     }
 
     public String calTax(Tax tax) {
-        CalculatedTax taxCal=new CalculatedTax();
+        //CalculatedTax taxCal=new CalculatedTax();
+
         this.userRepository.save(tax);
 
-        Integer total=tax.getIncomeFromSalary()-(tax.getInterestPaidOnLoan()
+        double total=tax.getIncomeFromSalary()-(tax.getInterestPaidOnLoan()
                 +tax.getInterestPaidOnHomeLoan()
                 +tax.getOtherIncome()
                 +tax.getDeductionFromSalary()
@@ -58,57 +60,49 @@ public class TaxService {
                 +tax.getEmployeeContributionNPS()
                 +tax.getIncomeFromDigitalAssets()
                 +tax.getInterestFromDeposite()
-                +tax.getInterestOnEduationLoan()
+//                +tax.getInterestOnEducationLoan()
                 +tax.getInterestOnHousingLoan()
                 +tax.getMedicalInsurance()
                 +tax.getRentalIncome()
                 +tax.getIncomeFromInterest());
         if (total<=250000){
             double totalTax = 0.00;
-            taxCal.setTaxCalculated(totalTax);
-            arr[0]=totalTax;
-            this.taxRepository.save(taxCal);
+            tax.setTaxCalculated(totalTax);
+            result=totalTax;
+            this.userRepository.save(tax);
         } else if ((total>250000)&&(total<500000)) {
             double totalTax=(total-250000)*0.05;
-            taxCal.setTaxCalculated(totalTax);
-            arr[0]=totalTax;
-            this.taxRepository.save(taxCal);
+            tax.setTaxCalculated(totalTax);
+            result=totalTax;
+            this.userRepository.save(tax);
         } else if ((total>500000)&&(total<750000)) {
             double totalTax=(total-500000)*0.1;
-            taxCal.setTaxCalculated(totalTax);
-            arr[0]=totalTax;
-            this.taxRepository.save(taxCal);
+            tax.setTaxCalculated(totalTax);
+            result=totalTax;
+            this.userRepository.save(tax);
         } else if ((total>750000)&&(total<1000000)) {
             double totalTax=(total-750000)*0.15;
-            taxCal.setTaxCalculated(totalTax);
-            arr[0]=totalTax;
-            this.taxRepository.save(taxCal);
+            tax.setTaxCalculated(totalTax);
+            result=totalTax;
+            this.userRepository.save(tax);
         } else if ((total>1000000)&&(total<1250000)) {
             double totalTax=(total-1000000)*0.2;
-            taxCal.setTaxCalculated(totalTax);
-            arr[0]=totalTax;
-            this.taxRepository.save(taxCal);
+            tax.setTaxCalculated(totalTax);
+            result=totalTax;
+            this.userRepository.save(tax);
         } else if ((total>1250000)&&(total<1500000)) {
             double totalTax=(total-1250000)*0.25;
-            taxCal.setTaxCalculated(totalTax);
-            arr[0]=totalTax;
-            this.taxRepository.save(taxCal);
+            tax.setTaxCalculated(totalTax);
+            result=totalTax;
+            this.userRepository.save(tax);
         } else{
             double totalTax=(total-1500000)*0.3;
-            taxCal.setTaxCalculated(totalTax);
-            arr[0]=totalTax;
-            this.taxRepository.save(taxCal);
+            tax.setTaxCalculated(totalTax);
+            result=totalTax;
+            this.userRepository.save(tax);
         }
-
-        GsonBuilder gsonBuilder=new GsonBuilder();
-        Gson gson=gsonBuilder.create();
-        String json=gson.toJson(arr);
-        return json;
+            return String.valueOf(result);
 
     }
-
-
-
-
 
 }

@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Tax")
 public class CalculatedTax {
 
-    private Long id;
+
     private double TaxCalculated;
 
 }
