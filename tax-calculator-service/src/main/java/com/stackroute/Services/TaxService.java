@@ -105,9 +105,6 @@ public class TaxService {
         String json=gson.toJson(arr);
         return json;
 
-        //JSONObject file= new JSONObject();
-        //file.put("CalculatedTax",totalTax);
-        //return file;
     }
 
 
