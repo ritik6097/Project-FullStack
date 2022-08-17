@@ -1,1 +1,60 @@
-<p>profile-user works!</p>
+<div class="container">
+  <div class="row">
+      <div class="col-3">
+          <h3 class="we">Welcome !</h3>
+          
+          <p class="message">You are just one step behind !</p>
+          
+          <div style="text-align: center;  margin-top: 60px;"><button type="submit" class="btn btn-light " >Login</button></div>
+      </div>
+<div class="col-9">
+ 
+<form  (ngSubmit)="profileupdate()" #profileform="ngForm">
+  <h4 class="text-warning text-center pt-5">User_Info</h4>
+  <div class="form-group row">
+     
+      <div class="col-sm-6">
+        <input required=""  #firstName="ngModel" ngModel=""  type="text" class="form-control" id="firstName" [(ngModel)] = "user.firstName" placeholder="firstname" name="firstname">
+        <span *ngIf="firstName.invalid && firstName.touched" class="error" style="color:red ;">firstName is requred</span>
+      </div>
+    <div class="col-sm-6">
+      <input required="" #lastName="ngModel" ngModel type="text" class="form-control" id="lastName" [(ngModel)] = "user.lastName" placeholder="lastName" name="lastName">
+      <span *ngIf="lastName.invalid && lastName.touched" class="error" style="color:red ;">lastName is requred</span>
+    </div>
+    </div>
+  <div class="form-group row">
+   
+    <div class="col-sm-12">
+      <input required="" #dob="ngModel" ngModel="" type="date" class="form-control" id="dob" [(ngModel)] = "user.dob" placeholder="dob" name="dob">
+      <span *ngIf="dob.invalid && dob.touched" class="error" style="color:red ;">enter date of birth</span>
+    </div>
+  </div>
+
+  <div class="form-group row">
+     
+      <div class="col-sm-12">
+        <label >select gender</label>
+        <select class="form-select" aria-label="Default select example" required="" #gender="ngModel" ngModel="" [(ngModel)] = "user.gender" name="gender">
+          
+          <option value="male" selected>Male</option>
+          <option value="female">Female</option>
+          <option value="others">Others</option>
+          <span *ngIf="gender.invalid && gender.touched" class="error" style="color:red ;">gender is required</span>
+        </select>
+    </div>
+  </div>
+  <div class="form-group row">
+     
+    <div class="col-sm-12">
+      <input  required="" #contactNumber="ngModel"  ngModel="" type="tel" class="form-control" id="contact tnumber" [(ngModel)] = "user.contactNumber" placeholder="contact tnumber" name="contactNumber">
+      <span *ngIf="contactNumber.invalid && contactNumber.touched" class="error" style="color:red ;">contact number is required</span>
+    </div>
+</div>
+  <div style="text-align: center; "><button type="submit" class="btn btn-primary " >Save & Next</button></div>
+  
+  
+</form>
+</div>
+
+</div>
+</div>
