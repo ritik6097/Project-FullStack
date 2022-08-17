@@ -24,25 +24,31 @@ public class EmailServiceImpl implements EmailService {
 	public EmailServiceImpl(JavaMailSender javaMailSender){
 		this.javaMailSender = javaMailSender;
 	}
-	
+
 	@Override
-	public void sendSimpleMail(String toEmail) throws MailException  {
-	
-			MimeMessage message = javaMailSender.createMimeMessage();
-			MimeMessageHelper helper = new MimeMessageHelper(message);
+	public void sendSimpleMail(Email email) {
+		
+		MimeMessage message = javaMailSender.createMimeMessage();
+		MimeMessageHelper helper = new MimeMessageHelper(message);
+		
+		try {
+			helper.setTo(email.getEmailId());
 			
-			try {
-				helper.setTo(toEmail);
-				
-				helper.setSubject("Login Confrimation Mail");
-				
-				boolean html = true;
-	            helper.setText("<div>Hi User\n\n<br>"+"Your WalletBooster Account has been login.<br>"+"\n\n"+"Login time :"+email.getLocalDateTime()
-				+"<br>"+ "\n\nThanks</div>",html);
-			} catch (MessagingException e) {
-				e.printStackTrace();
-			}		
-			javaMailSender.send(message);
+			helper.setSubject("Login Confrimation Mail");
+			
+			boolean html = true;
+            helper.setText("<div>Hi User\n\n<br>"+"Your WalletBooster Account has been login.<br>"+"\n\n"+"Login time :"+email.getLocalDateTime().now()
+			+"<br>"+ "\n\nThanks</div>",html);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}		
+		javaMailSender.send(message);
+	
+}
+		
 		
 	}
-}
+	
+
+
+

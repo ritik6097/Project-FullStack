@@ -1,5 +1,6 @@
 package com.stackroute.controller;
 
+import com.stackroute.model.Email;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +26,10 @@ public class EmailController {
 	
 	
 	@RequestMapping(value="/{emailId}/home",method=RequestMethod.GET)
-	public void sendMail(@PathVariable String emailId) {
-		
-		try {
-			emailservice.sendSimpleMail(emailId);
+	public void sendMail(@PathVariable String emailId){
+		try{
+//		emailservice.sendSimpleMail(emailId);
+
 			
 		} catch( Exception e ){
 			
