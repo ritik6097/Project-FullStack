@@ -13,35 +13,35 @@ public class Tax {
 
 
     private Long id;
-    private Integer incomeFromSalary;
+    private Double incomeFromSalary;
 
-    private Integer incomeFromInterest;
+    private Double incomeFromInterest;
 
-    private Integer interestPaidOnHomeLoan;
+    private Double interestPaidOnHomeLoan;
 
-    private Integer interestPaidOnLoan;
+    private Double interestPaidOnLoan;
 
-    private Integer deductionFromSalary;
+    private Double deductionFromSalary;
 
-    private Integer otherIncome;
+    private Double otherIncome;
 
-    private Integer rentalIncome;
+    private Double rentalIncome;
 
-    private Integer incomeFromDigitalAssets;
+    private Double incomeFromDigitalAssets;
 
-    private Integer basicDeduction;
+    private Double basicDeduction;
 
-    private Integer interestFromDeposite;
+    private Double interestFromDeposite;
 
-    private Integer medicalInsurance;
+    private Double medicalInsurance;
 
-    private Integer donationToCharity;
+    private Double donationToCharity;
 
     //private Integer interestOnEducationLoan;
 
-    private Integer interestOnHousingLoan;
+    private Double interestOnHousingLoan;
 
-    private Integer employeeContributionNPS;
+    private Double employeeContributionNPS;
 
     private Double TaxCalculated;
 
