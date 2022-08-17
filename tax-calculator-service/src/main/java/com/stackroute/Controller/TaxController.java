@@ -4,7 +4,6 @@ package com.stackroute.Controller;
 import com.stackroute.Services.TaxService;
 import com.stackroute.TaxModel.CalculatedTax;
 import com.stackroute.TaxModel.Tax;
-import org.json.simple.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -39,7 +38,6 @@ public class TaxController {
 
     @PostMapping ("/TaxCalculated")
     public String CalculateTax(@RequestBody Tax tax){
-        return "it's working";
-
+        return taxService.calTax(tax);
     }
 }
