@@ -1,12 +1,16 @@
-//package com.stackroute.dto;
+package com.stackroute.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-//@Data
-//public class ExceptionResponse {
- //  private Date dt;
- //   private String message;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ExceptionResponse {
 
-//}
+  private String message;
+
+}

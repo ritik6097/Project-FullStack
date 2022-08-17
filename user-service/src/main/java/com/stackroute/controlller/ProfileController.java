@@ -1,6 +1,7 @@
 package com.stackroute.controlller;
 
 
+import com.stackroute.dto.ExceptionResponse;
 import com.stackroute.exception.UserAlreadyExistException;
 import com.stackroute.exception.UserNotFoundException;
 import com.stackroute.model.UserProfile;
@@ -10,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/myprofile")
 public class ProfileController {
@@ -21,8 +22,8 @@ public class ProfileController {
     public ResponseEntity<?> addProfileController(@RequestBody UserProfile userProfile) throws Exception {
 
          if (this.userService.isUserPresent(userProfile.getEmail())) {
-          throw new UserAlreadyExistException("user already exist");
-       //  return ResponseEntity.ok("user already exist");
+         // throw new UserAlreadyExistException("user already exist");
+         return ResponseEntity.ok(new ExceptionResponse("user already exist"));
 
      }
 
