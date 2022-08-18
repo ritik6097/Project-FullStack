@@ -19,7 +19,6 @@ public class Consumer {
         @RabbitListener(queues  =MessageConfiguration.QUEUE)
         public void getEmailDtoFromRabbitMq (EmailDTO emailDto)
         {
-            System.out.println(emailDto);
             Email email = new Email();
             email.setEmailId(emailDto.getUseremailId());
             emailService.sendSimpleMail(email);
