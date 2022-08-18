@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtClientService } from '../services/jwt-client.service';
 
 @Component({
   selector: 'app-security',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecurityComponent implements OnInit {
 
-  constructor() { }
+  authReq:any;
+
+  constructor(private service:JwtClientService) { }
 
   ngOnInit(): void {
+  }
+
+  public getAccessToken(){
+
+    
+
   }
 
 }
