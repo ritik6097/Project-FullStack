@@ -29,10 +29,10 @@ public class EmailServiceImpl implements EmailService {
 	}
 
 	public void sendSimpleMail(Email email) {
+
 		SimpleMailMessage mail = new SimpleMailMessage();
 
 		try {
-//			mail.setFrom("admin@spring.io");
 			mail.setSubject("Login Confrimation Mail");
 			mail.setText("Hi User\n\n" + "Your WalletBooster Account has been login." + "\n\n" + "Login time :" + email.getLocalDateTime().now()
 					+ "\n\nThanks");
@@ -41,7 +41,6 @@ public class EmailServiceImpl implements EmailService {
 			logger.info("Error Sending  Email: " + e.getMessage());
 		}
 		this.javaMailSender.send(mail);
-
     }
 }
 	

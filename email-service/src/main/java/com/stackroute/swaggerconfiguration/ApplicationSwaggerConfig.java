@@ -32,7 +32,7 @@ public class ApplicationSwaggerConfig {
 		return new ApiInfo("WALLETBOOSTER_EMAILSERVICE API",
 				"Spring Boot API FOR WalletBooster",
 				"Walletbooster 1.0v","Terms of service",
-				new Contact("PUSHPENDRA-DEV","www.walletbooster.com",
+				new Contact("PUSHPENDRA-DEV","",
 				"PUSHPENDRAKADWA2018@GMAIL.COM"), "Apache2.0", "https://apache.org/");
 		
 	}
