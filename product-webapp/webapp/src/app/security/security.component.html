@@ -1,1 +1,52 @@
-<p>security works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="sidepane">
+
+            
+            <h2 >Not Registered ?</h2>
+
+            <p class="message">Join Us Now</p>
+
+            <div style="text-align: center;  margin-top: 60px; "><button type="submit"
+                    class="btn btn-light "><a href="/register-user" style="text-decoration: none;">Register</a> </button></div>
+                </div>
+        </div>
+        <div class="col-9">
+
+            <form (ngSubmit)="LoginUser()" #loginform="ngForm">
+                <h4 class="text-warning text-center pt-5">Login Form</h4>
+
+                <div class="signinform">
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input required="" type="email" #email="ngModel" ngModel class="form-control" id="email"
+                                placeholder="email" [(ngModel)]="login.email" name="email">
+                            <span *ngIf="email.invalid && email.touched" class="error" style="color:red ;">email is
+                                required</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input required="" #password="ngModel" ngModel type="password" class="form-control"
+                                id="inputPassword" placeholder="Password" [(ngModel)]="login.password" name="password">
+                            <span *ngIf="password.invalid && password.touched" class="error"
+                                style="color: red;">password is
+                                required</span>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; "><button type="submit" class="btn btn-primary ">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+
+            {{tkn}}
+        </div>
+
+    </div>
+</div>
+<br>
