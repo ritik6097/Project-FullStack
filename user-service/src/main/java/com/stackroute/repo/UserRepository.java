@@ -5,9 +5,10 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
 import java.util.Date;
+import java.util.Optional;
 
 public interface UserRepository extends MongoRepository<UserProfile, String> {
-    UserProfile findByEmail(String email);
+   Optional<UserProfile>  findByEmail(String email);
 
     void deleteByEmail(String email);
     //@Query(value = "select * from user_profile where email=:email")
