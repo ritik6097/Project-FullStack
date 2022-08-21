@@ -15,10 +15,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "USER_TBL")
 public class User {
+
     @Id
-    private int id;
-    @Column(name = "username")
-    private String userName;
-    private String password;
     private String email;
+    private String password;
 }
