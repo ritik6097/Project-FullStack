@@ -118,6 +118,7 @@ public class ProductService{
 		for(var i =0;i<myString.length;i++) {
 			file.put(myAdvice[i], myString[i]);
 		}
+		this.adviceRepository.deleteAll();
 		this.adviceRepository.save(adv);
 		return file;
 
