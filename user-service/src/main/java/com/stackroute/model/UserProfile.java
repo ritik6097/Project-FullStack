@@ -19,5 +19,13 @@ public class UserProfile {
      private String password;
     private String contactNumber;
 
+    public UserProfile(String email, String password) {
+        super();
+        this.email = email;
+        this.password = password;
+    }
+   public UserProfile(){
+        
+   }
 }
 
