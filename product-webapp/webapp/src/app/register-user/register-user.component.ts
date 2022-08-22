@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserServiceService } from '../user-service.service';
 import { Register } from './Register';
 
@@ -12,7 +13,7 @@ import { Register } from './Register';
 })
 export class RegisterUserComponent implements OnInit {
 register :Register=new Register();
-  constructor(private userService:UserServiceService) { }
+  constructor(private userService:UserServiceService,private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -32,5 +33,8 @@ else{
   registeruser(){
     console.log(this.register);
     this.saveUser();
+  }
+  onsubmit(){
+    this.route.navigateByUrl("/login")
   }
 }

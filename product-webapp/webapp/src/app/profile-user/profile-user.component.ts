@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from './User';
 
 @Component({
@@ -8,11 +9,14 @@ import { User } from './User';
 })
 export class ProfileUserComponent implements OnInit {
  user:User=new User();
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
   profileupdate(){
     console.log(this.user);
+  }
+  onsubmit(){
+    this.route.navigateByUrl("/")
   }
 }
