@@ -1,10 +1,11 @@
 package com.stackroute.controller;
 
-import com.stackroute.entity.AuthRequest;
+import com.stackroute.entity.User;
 import com.stackroute.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,21 +18,21 @@ public class UserLoginController {
     private AuthenticationManager authenticationManager;
 
     @GetMapping("/")
-    public String welcome() {
+    public String hello() {
         return "Welcome to Hello world !!";
     }
 
     @PostMapping("/authenticate")
-    public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
-        System.out.println(authRequest);
+    public String generateToken(@RequestBody User user) throws Exception {
+        System.out.println(user);
 
         try {
             authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(authRequest.getUserName(), authRequest.getPassword())
+                    new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword())
             );
         } catch (Exception ex) {
             throw new Exception("invalid username/password");
         }
-        return jwtUtil.generateToken(authRequest.getUserName());
+        return jwtUtil.generateToken(user.getEmail());
     }
 }

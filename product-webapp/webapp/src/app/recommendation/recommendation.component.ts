@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ThisReceiver } from '@angular/compiler';
+import { Model } from '../model';
+import { Observable } from 'rxjs';
+import { RecoService } from '../reco.service';
 
 @Component({
   selector: 'app-recommendation',
@@ -11,41 +14,34 @@ import { ThisReceiver } from '@angular/compiler';
   styleUrls: ['./recommendation.component.css']
 })
 export class RecommendationComponent  {
-  postData={
-    "iphl": 0,
-    "ipl": 0,
-    "eds": 0,
-    "ifds": 0,
-    "nps": 25000,
-    "ifd": 0,
-    "dtc": 0,
-    "iohl": 12000,
-    "oi": 0,
-    "ifs": 850000,
-    "bd": 0,
-    "md": 5000,
-    "ioel": 7000,
-    "rir": 0,
-    "gti1":750000,
-    "ded1":0,
-    "tax1":30000,
-    "gti2":750000,
-    "ded2":0,
-    "tax2":70000
-    
-  };
-
-  url="http://localhost:5200/saveproduct";
+  advices : object[]= [];
+  final : string[] = [];
   json;
-  constructor(private http:HttpClient){
-    this.http.post(this.url,this.postData).toPromise().then((data:any)=>{
-      console.log(data);
-      this.json=data;
-      console.log(typeof(this.json));
+  mydata;
+  mydata1;
+  constructor(private http : HttpClient){
+    
+    this.http.get('http://localhost:5500/advices').toPromise().then(
+      data=>{
+        
+        
+        for(let key in data){
+          if(data.hasOwnProperty(key)){
+            this.advices.push(data[key]);
+            this.json = this.advices[0];
+            console.log(this.json);
+            
+            
 
-      
-    });
+          }
+        }
 
+
+       
+
+      });
   }
-
+  
+  
+  
 }
