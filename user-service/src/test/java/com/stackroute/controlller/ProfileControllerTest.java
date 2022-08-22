@@ -39,13 +39,13 @@ private MockMvc mockMvc;
     public void setUp() {
         mockMvc = MockMvcBuilders.standaloneSetup(profileController).build();
     }
-    @Test
-    public void givenNewUserWhenPostThenReturnUserJSON() throws Exception {
-        UserProfile user = new UserProfile("hello@gmail.com", "Raju");
-        when(userService.addProfile(any())).thenReturn(user);
-        mockMvc.perform(post("/myprofile/save").contentType(MediaType.APPLICATION_JSON).content(
-                        "{\"email\":\"hello@gmail.com\",\"password\":\"123\"}"))
-                .andExpect(status().isCreated()).andExpect(jsonPath("$.email").value("hello@gmail.com"));
-    }
+  //  @Test
+    // public void givenNewUserWhenPostThenReturnUserJSON() throws Exception {
+       // UserProfile user = new UserProfile("hello@gmail.com", "Raju");
+     //   when(userService.addProfile(any())).thenReturn(user);
+       // mockMvc.perform(post("/myprofile/save").contentType(MediaType.APPLICATION_JSON).content(
+           //             "{\"email\":\"hello@gmail.com\",\"password\":\"123\"}"))
+         //       .andExpect(status().isCreated()).andExpect(jsonPath("$.email").value("hello@gmail.com"));
+  //  }
 
 }
