@@ -7,9 +7,21 @@ import com.stackroute.model.UserProfile;
 import java.util.Optional;
 
 public interface UserServiceInterface {
+
+
+
+    // to post register_info first time
     public UserProfile addProfile(UserProfile userProfile) throws  UserAlreadyExistException;
+
     public Optional<UserProfile> getProfile(String email) throws UserNotFoundException;
-    public UserProfile updateProfile(UserProfile userProfile ,String email);
+
+    // to put the user personal info
+     public UserProfile updateProfile(UserProfile userProfile ,String email) throws UserNotFoundException;
+
+
     public void deleteProfile(String email);
+
     public boolean isUserPresent(String email);
+
+
 }

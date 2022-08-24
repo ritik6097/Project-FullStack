@@ -11,10 +11,11 @@ public interface UserRepository extends MongoRepository<UserProfile, String> {
 
 
 
-   Optional<UserProfile>  findByEmail(String email);
+      Optional<UserProfile>  findByEmail(String email);
 
+       void deleteByEmail(String email);
 
-    void deleteByEmail(String email);
     //@Query(value = "select * from user_profile where email=:email")
-    //UserProfile findByEmail1(String email);
+    // @Query(value = "update  user_profile set firstName=:firstName and where email=:email")
+   // UserProfile updateProfileUser(String firstname,String lastname ,String dob, String gender, String con);
 }
