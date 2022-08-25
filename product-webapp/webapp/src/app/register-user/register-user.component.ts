@@ -12,28 +12,36 @@ import { Register } from './Register';
   styleUrls: ['./register-user.component.css']
 })
 export class RegisterUserComponent implements OnInit {
+  // OBJECT OF THE required class
 register :Register=new Register();
+
   constructor(private userService:UserServiceService,private route:Router) { }
 
   ngOnInit(): void {
   }
+
   saveUser()
 {
   this.userService.createUser(this.register).subscribe(data=>{
-console.log(data);
-if(data.message){
+
+     console.log(data);
+     // alert the exception thrown by backend if there is any
+     if(data.message){
   alert(data.message);
 }
+// or give a alert for successfully registration
 else{
   alert("successfully registered");
 }
 // alert("successfully registered");
-  },error=>console.log(error));
+  },error=>{console.log(error)});
 }
   registeruser(){
     console.log(this.register);
     this.saveUser();
+    this.onsubmit();
   }
+  
   onsubmit(){
     this.route.navigateByUrl("/login")
   }
