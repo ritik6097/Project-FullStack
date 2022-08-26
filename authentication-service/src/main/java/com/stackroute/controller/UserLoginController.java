@@ -8,6 +8,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
 @RestController
 @CrossOrigin
 public class UserLoginController {
@@ -35,4 +37,10 @@ public class UserLoginController {
         }
         return jwtUtil.generateToken(user.getEmail());
     }
+
+    @GetMapping("/google-login")
+    public Principal loginwithgoogle(Principal principal){
+        return principal;
+    }
+
 }
