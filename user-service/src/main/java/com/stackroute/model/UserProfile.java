@@ -10,14 +10,22 @@ import java.util.Date;
 @Data
 @Document(collection = "userCollection")
 public class UserProfile {
-    private String firstName;
-    private String lastName;
     @Id
     private String email;
+    private String firstName;
+    private String lastName;
     private String dob;
     private String gender;
      private String password;
     private String contactNumber;
 
+   public UserProfile(String email, String password) {
+       super();
+       this.email = email;
+        this.password = password;
+   }
+   public UserProfile(){
+        
+   }
 }
 

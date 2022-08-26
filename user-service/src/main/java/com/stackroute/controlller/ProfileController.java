@@ -29,17 +29,18 @@ public class ProfileController {
     @Autowired
     private UserRepository userRepository;
 
+
+
+ // this postmapping is used to post the data while registering the user
+
     @PostMapping("/save")
     public ResponseEntity<?> addProfileController(@RequestBody UserProfile userProfile)  {
-
         UserProfile saveRTP= null;
-        try {
 
+        try {
             //rabitmq message publishing
             CustomMessage message= new CustomMessage(userProfile.getEmail(),userProfile.getPassword());
             publisher.publishMessage(message);
-
-
             saveRTP = this.userService.addProfile(userProfile);
         }
 
@@ -50,7 +51,6 @@ public class ProfileController {
         return ResponseEntity.ok(saveRTP);
 
     }
-
 
 
 
@@ -68,17 +68,19 @@ public ResponseEntity<?> getProfileController(@PathVariable("email") String emai
 
 }
 
+   @PutMapping("/update/{email}")
 
 
-
-
-    @PutMapping("/update/{email}")
-    public ResponseEntity<?> updateProfileController(@RequestBody UserProfile userProfile,@PathVariable String email){
-
-        UserProfile updateRTP=this.userService.updateProfile(userProfile,email);
-        return ResponseEntity.ok(updateRTP);
-    }
-
+   public ResponseEntity<?> updateProfileController(@RequestBody UserProfile userProfile,@PathVariable String email) throws UserNotFoundException {
+       UserProfile updateRTP=null;
+        try {
+            updateRTP = this.userService.updateProfile(userProfile, email);
+       }
+       catch (UserNotFoundException e){
+           return ResponseEntity.ok(new ExceptionResponse("such user doesnot exist"));
+       }
+           return ResponseEntity.ok(updateRTP);
+       }
 
 
 

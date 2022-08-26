@@ -3,7 +3,8 @@
     width: auto;
     background-color: rgb(239, 241, 247);
     margin-top: 10%;
-    height: 500px;
+    height: 400px;
+    margin-bottom: 100px;
 }
 .col-3{
    background-color:#397ef6; 
@@ -11,10 +12,17 @@
 }
 .we{
    margin-top: 100px; 
-   margin-left: 50px;
+   margin-left: 70px;
 }
 .message{
     color: white;
+    padding-left: 60px;
+
+}
+.message2{
+    color: white;
+    padding-left: 97px;
+
 }
 input.ng-invalid{
     border-left: 5px solid red

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { JwtClientService } from '../services/jwt-client.service';
 import { Login } from './Login';
 
@@ -18,8 +19,8 @@ export class SecurityComponent implements OnInit {
     "password":"abc123"
   }
 
-  constructor(private service:JwtClientService) { }
-
+  constructor(private service:JwtClientService,private route :Router) { }
+ 
   ngOnInit(): void {
     this.getAccessToken(this.authReq)
   }
@@ -32,6 +33,9 @@ export class SecurityComponent implements OnInit {
   }
 
   public LoginUser(){
-
   }
+    onsubmit(){
+      this.route.navigateByUrl("/profile-user")
+    }
+  
 }
