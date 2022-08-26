@@ -27,6 +27,7 @@ public class EmailController {
 	
 	@RequestMapping(value="/{emailId}/home",method=RequestMethod.GET)
 	public void sendMail(@PathVariable String emailId){
+
 		try{
 //		emailservice.sendSimpleMail(emailId);
 
