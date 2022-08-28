@@ -57,7 +57,7 @@
       <span *ngIf="contactNumber.invalid && contactNumber.touched" class="error" style="color:red ;">contact number is required</span>
     </div> -->
 </div>
-  <div style="text-align: center; "><button type="submit" class="btn btn-primary "  >Save & EXplore</button></div>
+  <div style="text-align: center; "><button type="submit" class="btn btn-primary " [class.disabled]="!profileform.valid" >Save & EXplore</button></div>
   <!--(click)="onsubmit()" removed and called in profile update method-->
   
 </form>
