@@ -1,0 +1,105 @@
+<div class="container">
+  <!--one row will devide into two column of 3 and 9 standard grid system-->
+  <div class="row">
+    <div class="col-3">
+      <!--<img src="../../assets/img/guest-user.jpg" alt="still loading" id="img">-->
+      <img
+        src="../../assets/img/1177568-modified.png"
+        alt="still loading"
+        id="img"
+      />
+      <h4 class="tag">Hello{{firstName}}{{lastName}}!!</h4>
+    </div>
+
+    <div class="col-9">
+      <form #profileform="ngForm">
+        <!--<h4 class="text-warning text-center pt-5">User_Info</h4>-->
+        <div class="row" id="dash" >
+          
+            <h4 class="text-center pt-5" style="color: rgb(97, 126, 233)">
+              My Dashboard
+            </h4>
+          
+        </div>
+        <!-- <h4 class=" text-center pt-5" style="color: rgb(97, 126, 233);">My Dashboard</h4> -->
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <label for="firstName"> First Name</label>
+            <h3 class="form-control">{{ firstName }}</h3>
+            <!--<input     type="text" class="form-control" id="firstName" readonly {{firstName}} >-->
+          </div>
+
+          <div class="col-sm-6">
+            <label for="lastName"> Last Name</label>
+            <h3 class="form-control">{{lastName}}</h3>
+            <!--<input
+              type="text"
+              class="form-control"
+              id="lastName"
+              name="lastName"
+              readonly
+              {{lastName}}
+            />-->
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <label for="contactNumber">Date of Birth</label>
+              <h3 class="form-control">{{dob}}</h3>
+            <!--<input
+              ngModel=""
+              class="form-control"
+              id="dob"
+              name="dob"
+              readonly
+              {{dob}}
+            />-->
+          </div>
+
+          <div class="col-sm-6">
+            <label for="contactNumber">contact Number</label>
+            <h3 class="form-control">{{contactNumber}}</h3>
+            <!--<input
+              type="tel"
+              class="form-control"
+              id="contact tnumber"
+              name="contactNumber"
+              readonly{{contactNumber}}
+            />-->
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <label style="text-align: center"> gender</label>
+            <h3 class="form-control">{{gender}}</h3>
+            <!--<input type="text" class="form-control" readonly {{gender}} />-->
+          </div>
+          <div class="col-sm-6">
+            <label for="email">Full Name</label>
+            <h3 class="form-control">{{firstName}}
+              {{lastName}}</h3>
+            <!--<input
+              type="tel"
+              class="form-control"
+              id="email"
+              name="contactNumber"
+              readonly
+              {{firstName}}
+              {{lastName}}
+            />-->
+          </div>
+        </div>
+        <div class="form-group row">
+          <div style="text-align: center; "><button type="submit" class="btn btn-primary "routerLink="/" >Go to Home</button></div>
+          <!-- <div class="col-sm-6">
+        <input  required="" #contactNumber="ngModel"  ngModel="" type="tel" class="form-control" id="contact tnumber" [(ngModel)] = "user.contactNumber" placeholder="contact number" name="contactNumber">
+        <span *ngIf="contactNumber.invalid && contactNumber.touched" class="error" style="color:red ;">contact number is required</span>
+      </div> -->
+        </div>
+        <!--<div style="text-align: center; "><button type="submit" class="btn btn-primary"> <a href="profile-user" class="" style="text-decoration:none ; color: white;">EditProfile</a></button></div>-->
+        <!--(click)="onsubmit()" removed and called in profile update method-->
+      </form>
+    </div>
+  </div>
+</div>

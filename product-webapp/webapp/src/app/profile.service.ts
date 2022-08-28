@@ -8,11 +8,11 @@ import { User } from './profile-user/User';
 })
 export class ProfileService {
   // here provide your base url
-  private baseurl="http://localhost:8082/myprofile";
+  private baseurl="http://localhost:8082/myprofile/update";
 // here in costructor take private http client after importing httpmodule into your app.module.ts
   constructor(private httpclient:HttpClient) { }
 // here create method the method that should be responsible for updating the profile
   updateProfile(user:User):Observable<any>{
-    return this.httpclient.put(`${this.baseurl}/update/rk011@gmail.com`,user)
+    return this.httpclient.put(`${this.baseurl}/rr011@gmail.com`,user);
   }
 }

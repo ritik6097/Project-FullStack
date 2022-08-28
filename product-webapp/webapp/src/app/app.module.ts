@@ -12,6 +12,8 @@ import { AboutComponent } from './about/about.component';
 import { SecurityComponent } from './security/security.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GetprofileComponent } from './getprofile/getprofile.component';
+import { ProfsectionComponent } from './profsection/profsection.component';
 
 
 
@@ -26,7 +28,9 @@ import { AppComponent } from './app.component';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    SecurityComponent
+    SecurityComponent,
+    GetprofileComponent,
+    ProfsectionComponent
 
   ],
   imports: [
