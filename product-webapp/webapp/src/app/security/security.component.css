@@ -2,25 +2,30 @@
     overflow: hidden;
     width: auto;
     background-color: rgb(239, 241, 247);
-    margin-top: 10%;
-    height: 500px;
+    margin: 5%;
+    height: 400px;
+    border-radius: 15px;
 }
 .col-3{
    background-color:#397ef6; 
-   height: 500px;
+   height: 400px;
 }
-
-
 
 .sidepane{
    margin-top: 100px; 
-   margin-left: 50px;
+   margin-left: 10px;
 
 }
 .message{
     color: white;
     text-align: center;
 }
+
+.notreg{
+    color: black;
+    text-align: center;
+}
+
 input.ng-invalid{
     border-left: 5px solid red
     
@@ -30,6 +35,9 @@ input.ng-valid{
 }
 
 .signinform{
-    margin: 8px;
+    margin-left: 20%;
+    margin-top: 10px;
     padding: 5px;
+    width: 60%;
+    
 }

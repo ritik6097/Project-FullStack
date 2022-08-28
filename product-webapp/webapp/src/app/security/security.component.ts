@@ -15,14 +15,14 @@ export class SecurityComponent implements OnInit {
   tkn;
 
   authReq:any={
-    "userName":"abcabc",
+    "email":"abc@gmail.com",
     "password":"abc123"
   }
 
   constructor(private service:JwtClientService,private route :Router) { }
  
   ngOnInit(): void {
-    this.getAccessToken(this.authReq)
+    
   }
 
   public getAccessToken(authReq: any){
@@ -35,6 +35,8 @@ export class SecurityComponent implements OnInit {
   public LoginUser(){
   }
     onsubmit(){
+      this.getAccessToken(this.authReq)
+      console.log(this.tkn)
       this.route.navigateByUrl("/profile-user")
     }
   
