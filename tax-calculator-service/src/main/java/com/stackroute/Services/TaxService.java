@@ -1,14 +1,13 @@
 package com.stackroute.Services;
 
 
-import com.google.gson.GsonBuilder;
 import com.stackroute.Repository.TaxRepository;
 import com.stackroute.Repository.UserRepository;
 import com.stackroute.TaxModel.CalculatedTax;
 import com.stackroute.TaxModel.Tax;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.google.gson.Gson;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +27,10 @@ public class TaxService {
 
 
     //double[] arr=new double[1];
-    double result;
+    double result1;
+    double result2;
+    Double[] RES = new Double[2];
+    String[] myResult = {"TaxCaluclated1","TaxCalulated2"};
 
     public List<Tax> getDetail() {
         return userRepository.findAll();
@@ -46,63 +48,115 @@ public class TaxService {
         return taxRepository.findAll();
     }
 
-    public String calTax(Tax tax) {
-        //CalculatedTax taxCal=new CalculatedTax();
+    public JSONObject calTax(Tax tax) {
+        CalculatedTax taxCal=new CalculatedTax();
+
+
 
         this.userRepository.save(tax);
 
-        double total=tax.getIFS()-(tax.getIPL()
-                +tax.getIPHL()
-                +tax.getOI()
-                +tax.getEDS()
-                +tax.getDTC()
-                +tax.getBD()
-                +tax.getNPS()
-                +tax.getIDA()
-                +tax.getIFD()
-                +tax.getIEL()
-                +tax.getIHL()
-                +tax.getMI()
-                +tax.getRI()
-                +tax.getIFI());
-        if (total<=250000){
-            double totalTax = 0.00;
-            tax.setTaxCalculated(totalTax);
-            result=totalTax;
+        double total1=tax.getIFS()+(tax.getEDS()+tax.getOI()+tax.getIDA()+tax.getIPHL()+tax.getIEL()+tax.getRI()+tax.getIFI())
+        -(tax.getIPL() +tax.getDTC() +tax.getBD() +tax.getNPS() +tax.getIFD() +tax.getIHL() +tax.getMI());
+
+        double total2=tax.getIFS()+(tax.getEDS()+tax.getOI()+tax.getIDA()+tax.getIPHL()+tax.getIEL()+tax.getRI()+tax.getIFI())
+                -(tax.getIPL() +tax.getDTC()+tax.getNPS() +tax.getIHL());
+
+
+        if (total1<=250000 && total2<=250000){
+            double totalTax1 = 0.00;
+            double totalTax2=0.00;
+            tax.setTaxCalculated1(totalTax1);
+            tax.setTaxCalculated2(totalTax2);
+            taxCal.setTaxCalculated1(totalTax1);
+            taxCal.setTaxCalculated2(totalTax2);
+            result1=totalTax1;
+            result2=totalTax2;
+            RES[0]=result1;
+            RES[1]=result2;
             this.userRepository.save(tax);
-        } else if ((total>250000)&&(total<500000)) {
-            double totalTax=(total-250000)*0.05;
-            tax.setTaxCalculated(totalTax);
-            result=totalTax;
+        } else if (((total1>250000)&&(total1<=500000)) && ((total2>250000)&&(total2<=500000))) {
+            double totalTax1=(total1-250000)*0.05;
+            double totalTax2=(total2-250000)*0.05;
+            tax.setTaxCalculated1(totalTax1);
+            tax.setTaxCalculated2(totalTax2);
+            taxCal.setTaxCalculated1(totalTax1);
+            taxCal.setTaxCalculated2(totalTax2);
+            result1=totalTax1;
+            result2=totalTax2;
+            RES[0]=result1;
+            RES[1]=result2;
             this.userRepository.save(tax);
-        } else if ((total>500000)&&(total<750000)) {
-            double totalTax=(total-500000)*0.1;
-            tax.setTaxCalculated(totalTax);
-            result=totalTax;
+        } else if (((total1>500000)&&(total1<=750000)) && ((total2>500000)&&(total2<=750000))) {
+            double totalTax1=(total1-500000)*0.1;
+            double totalTax2=(total2-500000)*0.1;
+            tax.setTaxCalculated1(totalTax1);
+            tax.setTaxCalculated2(totalTax2);
+            taxCal.setTaxCalculated1(totalTax1);
+            taxCal.setTaxCalculated2(totalTax2);
+            result1=totalTax1;
+            result2=totalTax2;
+            RES[0]=result1;
+            RES[1]=result2;
             this.userRepository.save(tax);
-        } else if ((total>750000)&&(total<1000000)) {
-            double totalTax=(total-750000)*0.15;
-            tax.setTaxCalculated(totalTax);
-            result=totalTax;
+        } else if (((total1>750000)&&(total1<=1000000)) && ((total2>750000)&&(total2<=1000000))) {
+            double totalTax1=(total1-750000)*0.15;
+            double totalTax2=(total2-750000)*0.15;
+            tax.setTaxCalculated1(totalTax1);
+            tax.setTaxCalculated2(totalTax2);
+            taxCal.setTaxCalculated1(totalTax1);
+            taxCal.setTaxCalculated2(totalTax2);
+            result1=totalTax1;
+            result2=totalTax2;
+            RES[0]=result1;
+            RES[1]=result2;
             this.userRepository.save(tax);
-        } else if ((total>1000000)&&(total<1250000)) {
-            double totalTax=(total-1000000)*0.2;
-            tax.setTaxCalculated(totalTax);
-            result=totalTax;
+        } else if (((total1>1000000)&&(total1<=1250000)) && ((total1>1000000)&&(total1<=1250000))) {
+            double totalTax1=(total1-1000000)*0.2;
+            double totalTax2=(total2-1000000)*0.2;
+            tax.setTaxCalculated1(totalTax1);
+            tax.setTaxCalculated2(totalTax2);
+            taxCal.setTaxCalculated1(totalTax1);
+            taxCal.setTaxCalculated2(totalTax2);
+            result1=totalTax1;
+            result2=totalTax2;
+            RES[0]=result1;
+            RES[1]=result2;
             this.userRepository.save(tax);
-        } else if ((total>1250000)&&(total<1500000)) {
-            double totalTax=(total-1250000)*0.25;
-            tax.setTaxCalculated(totalTax);
-            result=totalTax;
+        } else if (((total1>1250000)&&(total1<=1500000)) && ((total1>1250000)&&(total1<=1500000))) {
+            double totalTax1=(total1-1250000)*0.25;
+            double totalTax2=(total2-1250000)*0.25;
+            tax.setTaxCalculated1(totalTax1);
+            tax.setTaxCalculated2(totalTax2);
+            taxCal.setTaxCalculated1(totalTax1);
+            taxCal.setTaxCalculated2(totalTax2);
+            result1=totalTax1;
+            result2=totalTax2;
+            RES[0]=result1;
+            RES[1]=result2;
             this.userRepository.save(tax);
         } else{
-            double totalTax=(total-1500000)*0.3;
-            tax.setTaxCalculated(totalTax);
-            result=totalTax;
+            double totalTax1=(total1-1500000)*0.3;
+            double totalTax2=(total2-1500000)*0.3;
+            tax.setTaxCalculated1(totalTax1);
+            tax.setTaxCalculated2(totalTax2);
+            taxCal.setTaxCalculated1(totalTax1);
+            taxCal.setTaxCalculated2(totalTax2);
+            result1=totalTax1;
+            result2=totalTax2;
+            RES[0]=result1;
+            RES[1]=result2;
             this.userRepository.save(tax);
         }
-        return String.valueOf(result);
 
+        this.taxRepository.deleteAll();
+        this.taxRepository.save(taxCal);
+
+
+        JSONObject file = new JSONObject();
+        for(var i =0;i<myResult.length;i++) {
+            file.put(myResult[i], RES[i]);
+        }
+        return file;
     }
 
 }
