@@ -21,7 +21,7 @@
 	</properties>
 	<modules>
 		<module>config-server</module>
-		<module>eureka-server</module>
+<!--		<module>eureka-server</module>-->
 		<module>api-gateway</module>
 		<module>user-service</module>
 		<module>authentication-service</module>
@@ -31,7 +31,7 @@
 		<module>chat-service</module>
 		<module>product-webapp</module>
 		<module>aggregator</module>
-
+<!--        <module>Blog</module>-->
 	</modules>
 
 	<dependencies>
@@ -78,7 +78,12 @@
 			<artifactId>activation</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-
+<!--config server-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
