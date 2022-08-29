@@ -23,13 +23,17 @@ public class EmailController {
 	
 	@Autowired
 	private EmailServiceImpl emailservice;
-	
-	
-	@RequestMapping(value="/{emailId}/home",method=RequestMethod.GET)
+
+	@Autowired
+    private Email email;
+
+	@RequestMapping(value="/{emailId}",method=RequestMethod.GET)
 	public void sendMail(@PathVariable String emailId){
 
+		email.setEmailId(emailId);
+
 		try{
-//		emailservice.sendSimpleMail(emailId);
+		emailservice.sendSimpleMail(email);
 
 			
 		} catch( Exception e ){

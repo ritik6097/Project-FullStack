@@ -12,6 +12,7 @@ import java.security.Principal;
 
 @RestController
 @CrossOrigin
+@RequestMapping("/api/v1")
 public class UserLoginController {
 
     @Autowired
@@ -19,9 +20,14 @@ public class UserLoginController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @GetMapping("/")
+    @GetMapping("/hello1")
     public String hello() {
-        return "Welcome to Hello world !!";
+        return "Welcome 1";
+    }
+
+    @GetMapping("/hello2")
+    public String hello2() {
+        return "Hello 2 !!";
     }
 
     @PostMapping("/authenticate")
