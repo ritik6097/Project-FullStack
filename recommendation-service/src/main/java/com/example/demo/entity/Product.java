@@ -5,74 +5,74 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Entity
-@Table(name="product")
+@Document(collection = "product")
 public class Product {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	//@Id
+	//@GeneratedValue(strategy=GenerationType.AUTO)
+	//private Long id;
 	
-	@Column(name="IFS")
+	//@Column(name="IFS")
 	private int IFS;
 	
-	@Column(name="IPHL")
+	//@Column(name="IPHL")
 	private int IPHL;
 	
-	@Column(name="IPL")
+	//@Column(name="IPL")
 	private int IPL;
 	
-	@Column(name="EDS")
+	//@Column(name="EDS")
 	private int EDS;
 	
-	@Column(name="OI")
+	//@Column(name="OI")
 	private int OI;
 	
-	@Column(name="RIR ")
+	//@Column(name="RIR ")
 	private int RIR;
 	
-	@Column(name="IFDS")
+	//@Column(name="IFDS")
 	private int IFDS;
 	
-	@Column(name="BD")
+	//@Column(name="BD")
 	private int BD;
 	
-	@Column(name="MD")
+	//@Column(name="MD")
 	private int MD;
 	
-	@Column(name="IOEL")
+	//@Column(name="IOEL")
 	private int IOEL;
 	
-	@Column(name="NPS")
+	//@Column(name="NPS")
 	private int NPS;
 	
-	@Column(name="IFD")
+	//@Column(name="IFD")
 	private int IFD;
 	
-	@Column(name="DTC")
+	//@Column(name="DTC")
 	private int DTC;
 	
-	@Column(name="IOHL")
+	//@Column(name="IOHL")
 	private int IOHL;
 	
 	
-	@Column(name="GTI1")
+	//@Column(name="GTI1")
 	private int GTI1;
 	
-	@Column(name="Ded1")
+	//@Column(name="Ded1")
 	private int Ded1;
 	
-	@Column(name="Tax1")
+	//@Column(name="Tax1")
 	private int Tax1;
 	
-	@Column(name="GTI2")
+	//@Column(name="GTI2")
 	private int GTI2;
 	
-	@Column(name="Ded2")
+	//@Column(name="Ded2")
 	private int Ded2;
 	
-	@Column(name="Tax2")
+	//@Column(name="Tax2")
 	private int Tax2;
 	
 	

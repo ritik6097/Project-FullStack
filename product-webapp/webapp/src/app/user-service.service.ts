@@ -8,9 +8,9 @@ import { Register } from './register-user/Register';
 })
 
 export class UserServiceService {
-private baseurl="http://localhost:8082/myprofile";
+private baseurl="http://localhost:8082/myprofile/save";
   constructor(private httpclient:HttpClient) { }
   createUser(register:Register):Observable<any>{
-    return this.httpclient.post(`${this.baseurl}/save`,register);
+    return this.httpclient.post(`${this.baseurl}`,register);
   }
 }

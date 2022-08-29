@@ -31,13 +31,13 @@ public class UserService  implements UserServiceInterface{
 
 
 @Override
-    public Optional<UserProfile> getProfile(String email) throws UserNotFoundException {
-        Optional<UserProfile> get=this.userRepository.findByEmail(email);
-        if (!get.isPresent()){
+    public UserProfile getProfile(String email) throws UserNotFoundException {
+        Optional<UserProfile> getDetails=this.userRepository.findByEmail(email);
+        if (!getDetails.isPresent()){
          throw new UserNotFoundException("user not found");
         }
-
-        return get;
+        UserProfile userDetails= getDetails.get();
+        return userDetails;
     }
 
 @Override

@@ -19,9 +19,12 @@
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 	</properties>
+
+
+
 	<modules>
 		<module>config-server</module>
-		<module>eureka-server</module>
+<!--		<module>eureka-server</module>-->
 		<module>api-gateway</module>
 		<module>user-service</module>
 		<module>authentication-service</module>
@@ -31,6 +34,7 @@
 		<module>chat-service</module>
 		<module>product-webapp</module>
 		<module>aggregator</module>
+		<module>Blog</module>
 
 	</modules>
 

@@ -13,7 +13,7 @@ public interface UserServiceInterface {
     // to post register_info first time
     public UserProfile addProfile(UserProfile userProfile) throws  UserAlreadyExistException;
 
-    public Optional<UserProfile> getProfile(String email) throws UserNotFoundException;
+    public UserProfile getProfile(String email) throws UserNotFoundException;
 
     // to put the user personal info
      public UserProfile updateProfile(UserProfile userProfile ,String email) throws UserNotFoundException;

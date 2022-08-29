@@ -36,37 +36,45 @@ public class ProfileController {
     @PostMapping("/save")
     public ResponseEntity<?> addProfileController(@RequestBody UserProfile userProfile)  {
         UserProfile saveRTP= null;
-
         try {
             //rabitmq message publishing
             CustomMessage message= new CustomMessage(userProfile.getEmail(),userProfile.getPassword());
             publisher.publishMessage(message);
             saveRTP = this.userService.addProfile(userProfile);
         }
-
         catch ( UserAlreadyExistException e)
         {
             return ResponseEntity.ok(new ExceptionResponse("user already exist"));
         }
         return ResponseEntity.ok(saveRTP);
-
     }
 
 
-
+// getting the profile of the user on clicking my profile button n frontend
 @GetMapping("/getprofile/{email}")
 public ResponseEntity<?> getProfileController(@PathVariable("email") String email) throws Exception {
+          UserProfile showProfile =null;
+          try{
+              showProfile=this.userService.getProfile(email);
+          }
+          catch (UserNotFoundException e){
 
-    Optional<UserProfile> getRTP=this.userService.getProfile(email);
-    if(getRTP==null){
-       // ExceptionResponse er= new ExceptionResponse();
-        throw new UserNotFoundException("this user is not available !!");
+          return ResponseEntity.ok( new ExceptionResponse("such user not exist"));
 
-       // return ResponseEntity.ok("user not found");
+          }
+       return ResponseEntity.ok(showProfile);
     }
-    return ResponseEntity.ok(getRTP);
 
-}
+//    Optional<UserProfile> getRTP=this.userService.getProfile(email);
+//    if(getRTP==null){
+//       // ExceptionResponse er= new ExceptionResponse();
+//        throw new UserNotFoundException("this user is not available !!");
+//
+//       // return ResponseEntity.ok("user not found");
+//    }
+//    return ResponseEntity.ok(getRTP);
+//
+//}
 
    @PutMapping("/update/{email}")
 

@@ -15,8 +15,11 @@ export class ProfileUserComponent implements OnInit {
   constructor(private route: Router,private profileservice:ProfileService) { }
 
   ngOnInit(): void {
-  }
   
+   let getlocalemail=localStorage.getItem('local');
+   console.log(getlocalemail);
+   console.log("this got from locastorage");
+}
   saveProfile(){
   this.profileservice.updateProfile(this.user).subscribe(data=>{
     console.log(data);

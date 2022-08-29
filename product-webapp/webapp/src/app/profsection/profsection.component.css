@@ -1,0 +1,51 @@
+.container{ 
+    
+    width: auto;
+    background-color: rgb(239, 241, 247);
+    margin-top: 100px;
+    margin-bottom: 100px;
+    height: 300px;
+    width: 600px;
+    border-radius: 50px;
+    background-color: blue;
+}
+.col-3{
+    background-color:#397ef6; 
+    height: 300px;
+    border-radius: 60px;
+ }
+#row1{
+    color: white;
+background-color: blue;
+height:100px ;
+width: auto;
+text-align: center;
+font-size: xx-large;
+border-top-left-radius:30px ;
+border-top-right-radius: 30px;
+padding-top: 25px;
+}
+#button1{
+    padding-top: 85px;
+    padding-left: 60px;
+    
+}
+#button2{
+    padding-top: 85px;
+    padding-left: 60px; 
+}
+
+#text{
+    color: black;
+    text-decoration: none;
+}
+#col1{
+    background-color: rgb(30, 16, 74);
+    height: 200px;
+    border-radius: 30px;
+}
+#col2{
+    background-color: rgb(30, 16, 74);
+    height: 200px;
+    border-radius: 30px;
+}

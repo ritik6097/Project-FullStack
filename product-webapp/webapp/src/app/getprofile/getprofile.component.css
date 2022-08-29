@@ -1,0 +1,41 @@
+.container{ 
+    
+    width: auto;
+    background-color: beige;
+    margin-top: 10%;
+    margin-bottom: 100px;
+    height: 500px;
+    border-radius: 40px;
+    
+   
+}
+.col-3{
+    background-color:#397ef6; 
+    height: 500px;
+    border-radius: 60px;
+ }
+ .col-9{
+    background-color: beige;
+    border-top-right-radius: 80px ;
+    border-bottom-right-radius: 80px;
+ }
+ .we{
+    margin-top: 100px; 
+    margin-left: 80px;
+ }
+ .message{
+     color: white;
+     padding-left: 40px;
+     padding-top: 20px;
+ }
+ #img{
+    height: 200px;
+    width: 200px;
+    margin: 80px 60px 0px 50px;
+ }
+ .tag{
+   color: white;
+   margin-left: 30px;
+   margin-top: 30px;
+ }
+ 
