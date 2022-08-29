@@ -31,6 +31,7 @@
 		<module>chat-service</module>
 		<module>product-webapp</module>
 		<module>aggregator</module>
+		<module>Blog</module>
 
 	</modules>
 
