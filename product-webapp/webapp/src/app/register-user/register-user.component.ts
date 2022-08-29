@@ -14,7 +14,7 @@ import { Register } from './Register';
 export class RegisterUserComponent implements OnInit {
   // OBJECT OF THE required class
 register :Register=new Register();
-
+   localemail:any="";
   constructor(private userService:UserServiceService,private route:Router) { }
 
   ngOnInit(): void {
@@ -40,6 +40,8 @@ else{
     console.log(this.register);
     this.saveUser();
     this.onsubmit();
+ this.localemail=this.register.email;
+ localStorage.setItem('local',this.localemail);
   }
   
   onsubmit(){
