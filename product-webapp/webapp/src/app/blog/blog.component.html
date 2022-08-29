@@ -1,0 +1,94 @@
+
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="../../assets/img/calculator-385506__480.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="display-5 fw-bold lh-1 mb-3">Ethereum Merge Closer than Ever! Why it Matters & What to Expect</h2> 
+        <p class="lead">Best tax saving options as per your needs.</p>
+        <p>The successful implementatation of the Goerli testnet merge takes the project one step closer to Ethereum’s mainnet upgrade that is set to be completed later this year.
+
+            Ropsten and Sepolia, the two previous testnet merges, were largely successful as well. The successful executions of the testnets helped in heightening the ETH community’s confidence regarding the actual Ethereum Merge which is tentatively scheduled for Mid-September 2022.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+          <div class="container">
+            <form
+              id="contact-form"
+              role="form"
+              #myform="ngForm"
+              (ngSubmit)="addBlog()"
+            >
+              <div class="controls">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="form_name">Name *</label>
+                      <input
+                        id="form_name"
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        placeholder="Please enter your name *"
+                        [(ngModel)]="blog.name"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="form_need">Title *</label>
+                      <input
+                        id="form_title"
+                        type="text"
+                        name="title"
+                        class="form-control"
+                        placeholder="Please enter your title *"
+                        [(ngModel)]="blog.title"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="form_message">content *</label>
+                      <textarea
+                        id="form_message"
+                        name="message"
+                        class="form-control"
+                        placeholder="Write your message here."
+                        rows="4"
+                        required="required"
+                        data-error="Please, leave us a message."
+                        [(ngModel)]="blog.content"
+                      >
+                      </textarea>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <input
+                      type="submit"
+                      class="btn btn-success btn-send pt-2 btn-block"
+                      value="ADD BLOG"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- /.8 -->
+    </div>
+    <!-- /.row-->
+  </div>
+

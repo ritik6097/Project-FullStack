@@ -5,35 +5,35 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Entity
-@Table(name="Advice")
-
+@Document(collection = "Advice")
 public class Advice {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	//@Id
+	//@GeneratedValue(strategy=GenerationType.AUTO)
+	//private Long id;
 	
-	@Column(name="Advice1")
+	//@Column(name="Advice1")
 	private String Advice1;
 	
-	@Column(name="Advice2")
+	//@Column(name="Advice2")
 	private String Advice2;
 	
-	@Column(name="Advice3")
+	//@Column(name="Advice3")
 	private String Advice3;
 	
-	@Column(name="Advice4")
+	//@Column(name="Advice4")
 	private String Advice4;
 	
-	@Column(name="Advice5")
+	//@Column(name="Advice5")
 	private String Advice5;
 	
-	@Column(name="Advice6")
+	//@Column(name="Advice6")
 	private String Advice6;
 	
-	@Column(name="Advice7")
+	//@Column(name="Advice7")
 	private String Advice7;
 	
 	public String getAdvice1() {
