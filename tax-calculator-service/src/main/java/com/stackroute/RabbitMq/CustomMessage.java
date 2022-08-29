@@ -1,23 +1,16 @@
-package com.stackroute.TaxModel;
+package com.stackroute.RabbitMq;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-
-
+import lombok.ToString;
 
 @Data
-@Document(collection = "TaxDetails")
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class Tax {
-
-
-    private Long id=105L;
+public class CustomMessage {
 
     private Double IFS;
 
@@ -50,12 +43,5 @@ public class Tax {
     private Double NPS;
 
     private Double TaxCalculated;
-
-//    public Tax(Long id, Double IFS) {
-//        super();
-//        this.id = id;
-//        this.IFS = IFS;
-//    }
-
 
 }
