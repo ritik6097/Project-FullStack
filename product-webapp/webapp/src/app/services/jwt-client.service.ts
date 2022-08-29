@@ -8,6 +8,8 @@ export class JwtClientService {
 
   constructor(private http:HttpClient) { }
 
+  private sendEmailBaseUrl = "http://localhost:8085/sendEmail"
+
   public generateToken(request){
     return this.http.post("http://localhost:8087/authenticate", request,{responseType: "text" as "json"} )
   }
@@ -16,6 +18,10 @@ export class JwtClientService {
     let tokenStr = "Bearer "+ token;
     const headers = new HttpHeaders().set("Authorization", tokenStr)
     return this.http.get("http://localhost:8087/", {headers, responseType:"text" as "json"})
+
+  }
+
+  public sendEmail(email){
 
   }
 }
