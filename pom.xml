@@ -34,12 +34,11 @@
 		<module>chat-service</module>
 		<module>product-webapp</module>
 		<module>aggregator</module>
-<<<<<<< HEAD
+
 <!--        <module>Blog</module>-->
-=======
+
 		<module>Blog</module>
 
->>>>>>> 0ccd17c483e400b8eacd2226ecfda549a5d9b764
 	</modules>
 
 	<dependencies>
