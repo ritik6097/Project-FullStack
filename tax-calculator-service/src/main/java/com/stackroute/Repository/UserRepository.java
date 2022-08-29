@@ -9,4 +9,5 @@ import java.util.Optional;
 
 public interface UserRepository extends MongoRepository<Tax,Long> {
     Optional<Tax> findTaxById(Long id);
+
 }

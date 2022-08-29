@@ -51,20 +51,20 @@ public class TaxService {
 
         this.userRepository.save(tax);
 
-        double total=tax.getIncomeFromSalary()-(tax.getInterestPaidOnLoan()
-                +tax.getInterestPaidOnHomeLoan()
-                +tax.getOtherIncome()
-                +tax.getDeductionFromSalary()
-                +tax.getDonationToCharity()
-                +tax.getBasicDeduction()
-                +tax.getEmployeeContributionNPS()
-                +tax.getIncomeFromDigitalAssets()
-                +tax.getInterestFromDeposite()
-//                +tax.getInterestOnEducationLoan()
-                +tax.getInterestOnHousingLoan()
-                +tax.getMedicalInsurance()
-                +tax.getRentalIncome()
-                +tax.getIncomeFromInterest());
+        double total=tax.getIFS()-(tax.getIPL()
+                +tax.getIPHL()
+                +tax.getOI()
+                +tax.getEDS()
+                +tax.getDTC()
+                +tax.getBD()
+                +tax.getNPS()
+                +tax.getIDA()
+                +tax.getIFD()
+                +tax.getIEL()
+                +tax.getIHL()
+                +tax.getMI()
+                +tax.getRI()
+                +tax.getIFI());
         if (total<=250000){
             double totalTax = 0.00;
             tax.setTaxCalculated(totalTax);
@@ -101,8 +101,10 @@ public class TaxService {
             result=totalTax;
             this.userRepository.save(tax);
         }
-            return String.valueOf(result);
+        return String.valueOf(result);
 
     }
 
 }
+
+
