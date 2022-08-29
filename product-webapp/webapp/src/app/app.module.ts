@@ -14,6 +14,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GetprofileComponent } from './getprofile/getprofile.component';
 import { ProfsectionComponent } from './profsection/profsection.component';
+import { BlogComponent } from './blog/blog.component';
+import { ShowblogsComponent } from './showblogs/showblogs.component';
+import { BlogprofileComponent } from './blogprofile/blogprofile.component';
 
 
 
@@ -30,7 +33,10 @@ import { ProfsectionComponent } from './profsection/profsection.component';
     AboutComponent,
     SecurityComponent,
     GetprofileComponent,
-    ProfsectionComponent
+    ProfsectionComponent,
+    BlogComponent,
+    ShowblogsComponent,
+    BlogprofileComponent
 
   ],
   imports: [
@@ -40,7 +46,7 @@ import { ProfsectionComponent } from './profsection/profsection.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [HttpClient,HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
