@@ -1,1 +1,169 @@
-#dummycommit
+version: "2"
+
+services:
+  config-server:
+    container_name: config-server
+    build: config-server/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8888:8888
+    restart: always
+
+  eureka-server:
+    container_name: eureka-server
+    build: eureka-server/
+    restart: always
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 6002:6002
+    depends_on:
+      - config-server
+
+  api-gateway:
+    container_name: api-gateway
+    build: api-gateway/
+    depends_on:
+      - eureka-server
+      - config-server
+    restart: always
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 8080:8080
+
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb-container"
+    hostname: localhost
+    ports:
+      - 27017:27017
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - 15672:15672
+      - 5672:5672
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    hostname: localhost
+    network_mode: "host"
+    ports:
+      - 3306:3306
+    #    cap_add:
+    #      - SYS_NICE
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Password'
+      MYSQL_DATABASE: authuser
+      MYSQL_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+  user-service:
+    container_name: user-service
+    build: user-service/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8082:8082
+    depends_on:
+      - mongodb
+      - eureka-server
+      - config-server
+      - rabbitmq
+    restart: always
+
+  authentication-service:
+    container_name: authentication-service
+    build: authentication-service/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8087:8087
+    depends_on:
+      - eureka-server
+      - config-server
+      - rabbitmq
+    restart: always
+
+  email-service:
+    container_name: email-service
+    build: email-service/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8085:8085
+    depends_on:
+      - eureka-server
+      - config-server
+      - rabbitmq
+    restart: always
+
+  product-webapp:
+    container_name: product-webapp
+    build: product-webapp/
+    hostname: localhost
+    restart: always
+    network_mode: host
+    ports:
+      - 4200:4200
+    depends_on:
+      - eureka-server
+
+  blog:
+    container_name: blog
+    build: blog/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8096:8096
+    depends_on:
+      - mongodb
+      - eureka-server
+      - config-server
+    restart: always
+
+  chat-service:
+    container_name: chat-service
+    build: chat-service/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8086:8086
+    depends_on:
+      - mongodb
+      - eureka-server
+      - config-server
+    restart: always
+
+  recommendation-service:
+    container_name: recommendation-service
+    build: recommendation-service/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 5500:5500
+    depends_on:
+      - mongodb
+      - eureka-server
+      - config-server
+      - rabbitmq
+    restart: always
+
+  tax-calculator-service:
+    container_name: tax-calculator-service
+    build: tax-calculator-service/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8083:8083
+    depends_on:
+      - mongodb
+      - eureka-server
+      - config-server
+      - rabbitmq
+    restart: always
