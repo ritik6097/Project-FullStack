@@ -14,5 +14,7 @@ export class TaxServiceService {
     return this.http.post("http://localhost:8083/api/v1/TaxCalculated",user, {responseType: 'text' as 'json'});
   }
 
+  
+
 
 }
