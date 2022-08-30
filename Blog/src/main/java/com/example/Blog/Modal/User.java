@@ -1,4 +1,4 @@
-package com.example.Blog;
+package com.example.Blog.Modal;
 
 import lombok.*;
 import org.springframework.boot.autoconfigure.domain.EntityScan;

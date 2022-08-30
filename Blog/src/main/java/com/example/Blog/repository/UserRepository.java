@@ -1,8 +1,7 @@
-package com.example.Blog;
+package com.example.Blog.repository;
 
+import com.example.Blog.Modal.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
-
-import java.util.List;
 
 public interface UserRepository extends MongoRepository<User,String> {
     User getUserById(String id);

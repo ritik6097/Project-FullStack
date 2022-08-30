@@ -1,7 +1,8 @@
-package com.example.Blog;
+package com.example.Blog.service;
 
+import com.example.Blog.Modal.User;
+import com.example.Blog.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,7 +10,8 @@ import java.util.Optional;
 
 @Service
 public class UserService {
-    @Autowired UserRepository userRepository;
+    @Autowired
+    UserRepository userRepository;
     //add User
     public User addUser(User user) {
         try {
