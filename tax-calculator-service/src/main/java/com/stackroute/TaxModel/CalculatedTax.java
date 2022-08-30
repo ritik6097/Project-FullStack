@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class CalculatedTax {
 
 
-    private double TaxCalculated;
+    private Double TaxCalculated1;
+
+    private Double TaxCalculated2;
 
 }

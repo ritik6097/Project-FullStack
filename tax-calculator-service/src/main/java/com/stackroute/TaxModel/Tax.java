@@ -49,7 +49,9 @@ public class Tax {
 
     private Double NPS;
 
-    private Double TaxCalculated;
+    private Double TaxCalculated1;
+
+    private Double TaxCalculated2;
 
 //    public Tax(Long id, Double IFS) {
 //        super();

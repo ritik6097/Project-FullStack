@@ -1,22 +1,17 @@
-server:
-  port: 8087
 
 spring:
-  datasource:
-    url: jdbc:mysql://@localhost:3306/authapp
-    username: root
-    password: root
+  config:
+    import: optional:configserver:http://localhost:8888
 
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
+  cloud:
+    config:
+      enabled: true
 
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: 881729232741-2eanekf6fm66b6cip6nqahbuak2ch3sm.apps.googleusercontent.com
-            client-secret: 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
+  application:
+    name: authentication-service
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
