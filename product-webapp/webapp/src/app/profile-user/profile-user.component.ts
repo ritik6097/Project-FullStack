@@ -16,7 +16,7 @@ export class ProfileUserComponent implements OnInit {
 
   ngOnInit(): void {
   
-   let getlocalemail=localStorage.getItem('local');
+   let getlocalemail=localStorage.getItem('user-email');
    console.log(getlocalemail);
    console.log("this got from locastorage");
 }

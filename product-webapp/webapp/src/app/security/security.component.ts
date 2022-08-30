@@ -27,6 +27,12 @@ export class SecurityComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  public sendEmailToUser(email){
+    let setu=this.service.sendEmail(email);
+    setu.subscribe(()=>{
+      console.log("message from security.ts")
+    });
+  }
 
   public getAccessToken(authReq: any) {
 
@@ -54,7 +60,10 @@ export class SecurityComponent implements OnInit {
     console.log(loginform.value.email);
     localStorage.setItem("user-email", loginform.value.email)
     this.getAccessToken(this.authReq)
-    // this.route.navigateByUrl("/profile-user")
+    this.sendEmailToUser(localStorage.getItem('user-email'));
+    this.route.navigateByUrl("/profile-user")
+    console.log(localStorage.getItem('user-email'));
   }
+
 
 }

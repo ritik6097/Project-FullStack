@@ -20,8 +20,13 @@ export class JwtClientService {
     return this.http.get("http://localhost:8087/", {headers, responseType:"text" as "json"})
 
   }
-
+  // getlocalemail:string | null=localStorage.getItem('user-email');
   public sendEmail(email){
 
+  console.log('hii===================>>>>');
+  console.log("http://localhost:8085/login/" +email);
+    return this.http.get("http://localhost:8085/login/" +email)
+   
+  
   }
 }

@@ -8,7 +8,7 @@ import { User } from './profile-user/User';
 })
 export class ProfileService {
  // getlocalemail:any;
- getlocalemail:string | null=localStorage.getItem('local');
+ getlocalemail:string | null=localStorage.getItem('user-email');
   
    
   // here provide your base url
