@@ -34,13 +34,19 @@ export class SecurityComponent implements OnInit {
     });
   }
 
-  public getAccessToken(authReq: any) {
+  public getAccessToken(authReq: any, logindata) {
 
     let resp = this.service.generateToken(this.authReq);
     resp.subscribe((data) => {
       this.tkn = data
-      console.log(this.tkn)
+      // console.log(this.tkn)
       localStorage.setItem("token", this.tkn)
+      localStorage.setItem("user-email", logindata.value.email)
+      this.sendEmailToUser(localStorage.getItem('user-email'));
+      this.route.navigateByUrl("/profile-user")
+
+    }, () => {
+      alert("invalid Credentials")
     })
 
   }
@@ -57,12 +63,8 @@ export class SecurityComponent implements OnInit {
       "password": loginform.value.password
     }
 
-    console.log(loginform.value.email);
-    localStorage.setItem("user-email", loginform.value.email)
-    this.getAccessToken(this.authReq)
-    this.sendEmailToUser(localStorage.getItem('user-email'));
-    this.route.navigateByUrl("/profile-user")
-    console.log(localStorage.getItem('user-email'));
+    this.getAccessToken(this.authReq, loginform)
+    
   }
 
 

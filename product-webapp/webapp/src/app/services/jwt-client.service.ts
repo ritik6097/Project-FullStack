@@ -8,9 +8,10 @@ export class JwtClientService {
 
   constructor(private http:HttpClient) { }
 
-  private sendEmailBaseUrl = "http://localhost:8085/sendEmail"
+  // private sendEmailBaseUrl = "http://localhost:8085/sendEmail"
 
-  public generateToken(request){
+  public generateToken(request) {
+    
     return this.http.post("http://localhost:8087/authenticate", request,{responseType: "text" as "json"} )
   }
 
@@ -23,10 +24,9 @@ export class JwtClientService {
   // getlocalemail:string | null=localStorage.getItem('user-email');
   public sendEmail(email){
 
-  console.log('hii===================>>>>');
-  console.log("http://localhost:8085/login/" +email);
+  // console.log('hii===================>>>>');
+  // console.log("http://localhost:8085/login/" +email);
     return this.http.get("http://localhost:8085/login/" +email)
    
-  
   }
 }
