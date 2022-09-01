@@ -42,9 +42,7 @@ public class TaxController {
 
     @PostMapping("/saveNew")
     public String addNewDetails(@RequestBody Tax tax){
-        //rabitmq message publishing
-        CustomMessage message= new CustomMessage(tax.getIFS(), tax.getIFI(), tax.getIPHL(), tax.getEDS(), tax.getBD(), tax.getDTC(), tax.getIDA(),tax.getIEL(), tax.getIFD(), tax.getIHL(),tax.getIPL(), tax.getNPS(), tax.getOI(), tax.getRI(), tax.getMI(), tax.getTaxCalculated1());
-        publisher.publishMessage(message);
+
         taxService.addNewDetail(tax);
         return "Data Stored";
     }
@@ -52,6 +50,10 @@ public class TaxController {
     @PostMapping ("/TaxCalculated")
     public ResponseEntity<JSONObject> CalculateTax(@RequestBody Tax tax){
         JSONObject message=taxService.calTax(tax);
+        //rabitmq message publishing
+        CustomMessage messageRabbit= new CustomMessage(tax.getIFS(), tax.getIFI(), tax.getIPHL(), tax.getEDS(), tax.getBD(), tax.getDTC(), tax.getIDA(),tax.getIEL(), tax.getIFD(), tax.getIHL(),tax.getIPL(), tax.getNPS(), tax.getOI(), tax.getRI(), tax.getMI(), tax.getTax1(),tax.getTax2());
+        publisher.publishMessage(messageRabbit);
+
         return new ResponseEntity<JSONObject>(message, HttpStatus.OK);
     }
 }

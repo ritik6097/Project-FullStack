@@ -37,10 +37,6 @@ public class TaxService {
     }
 
     public void addNewDetail(Tax tax) {
-        Optional<Tax>TaxById=userRepository.findTaxById(tax.getId());
-        if (TaxById.isPresent()){
-            throw new IllegalStateException("Already Exist");
-        }
         userRepository.save(tax);
     }
 
@@ -50,10 +46,6 @@ public class TaxService {
 
     public JSONObject calTax(Tax tax) {
         CalculatedTax taxCal=new CalculatedTax();
-
-
-
-        this.userRepository.save(tax);
 
         double total1=tax.getIFS()+(tax.getEDS()+tax.getOI()+tax.getIDA()+tax.getIPHL()+tax.getIEL()+tax.getRI()+tax.getIFI())
         -(tax.getIPL() +tax.getDTC() +tax.getBD() +tax.getNPS() +tax.getIFD() +tax.getIHL() +tax.getMI());
@@ -65,86 +57,93 @@ public class TaxService {
         if (total1<=250000 && total2<=250000){
             double totalTax1 = 0.00;
             double totalTax2=0.00;
-            tax.setTaxCalculated1(totalTax1);
-            tax.setTaxCalculated2(totalTax2);
+            tax.setTax1(totalTax1);
+            tax.setTax2(totalTax2);
             taxCal.setTaxCalculated1(totalTax1);
             taxCal.setTaxCalculated2(totalTax2);
             result1=totalTax1;
             result2=totalTax2;
             RES[0]=result1;
             RES[1]=result2;
+            this.userRepository.deleteAll();
             this.userRepository.save(tax);
         } else if (((total1>250000)&&(total1<=500000)) && ((total2>250000)&&(total2<=500000))) {
             double totalTax1=(total1-250000)*0.05;
             double totalTax2=(total2-250000)*0.05;
-            tax.setTaxCalculated1(totalTax1);
-            tax.setTaxCalculated2(totalTax2);
+            tax.setTax1(totalTax1);
+            tax.setTax2(totalTax2);
             taxCal.setTaxCalculated1(totalTax1);
             taxCal.setTaxCalculated2(totalTax2);
             result1=totalTax1;
             result2=totalTax2;
             RES[0]=result1;
             RES[1]=result2;
+            this.userRepository.deleteAll();
             this.userRepository.save(tax);
         } else if (((total1>500000)&&(total1<=750000)) && ((total2>500000)&&(total2<=750000))) {
             double totalTax1=(total1-500000)*0.1;
             double totalTax2=(total2-500000)*0.1;
-            tax.setTaxCalculated1(totalTax1);
-            tax.setTaxCalculated2(totalTax2);
+            tax.setTax1(totalTax1);
+            tax.setTax2(totalTax2);
             taxCal.setTaxCalculated1(totalTax1);
             taxCal.setTaxCalculated2(totalTax2);
             result1=totalTax1;
             result2=totalTax2;
             RES[0]=result1;
             RES[1]=result2;
+            this.userRepository.deleteAll();
             this.userRepository.save(tax);
         } else if (((total1>750000)&&(total1<=1000000)) && ((total2>750000)&&(total2<=1000000))) {
             double totalTax1=(total1-750000)*0.15;
             double totalTax2=(total2-750000)*0.15;
-            tax.setTaxCalculated1(totalTax1);
-            tax.setTaxCalculated2(totalTax2);
+            tax.setTax1(totalTax1);
+            tax.setTax2(totalTax2);
             taxCal.setTaxCalculated1(totalTax1);
             taxCal.setTaxCalculated2(totalTax2);
             result1=totalTax1;
             result2=totalTax2;
             RES[0]=result1;
             RES[1]=result2;
+            this.userRepository.deleteAll();
             this.userRepository.save(tax);
         } else if (((total1>1000000)&&(total1<=1250000)) && ((total1>1000000)&&(total1<=1250000))) {
             double totalTax1=(total1-1000000)*0.2;
             double totalTax2=(total2-1000000)*0.2;
-            tax.setTaxCalculated1(totalTax1);
-            tax.setTaxCalculated2(totalTax2);
+            tax.setTax1(totalTax1);
+            tax.setTax2(totalTax2);
             taxCal.setTaxCalculated1(totalTax1);
             taxCal.setTaxCalculated2(totalTax2);
             result1=totalTax1;
             result2=totalTax2;
             RES[0]=result1;
             RES[1]=result2;
+            this.userRepository.deleteAll();
             this.userRepository.save(tax);
         } else if (((total1>1250000)&&(total1<=1500000)) && ((total1>1250000)&&(total1<=1500000))) {
             double totalTax1=(total1-1250000)*0.25;
             double totalTax2=(total2-1250000)*0.25;
-            tax.setTaxCalculated1(totalTax1);
-            tax.setTaxCalculated2(totalTax2);
+            tax.setTax1(totalTax1);
+            tax.setTax2(totalTax2);
             taxCal.setTaxCalculated1(totalTax1);
             taxCal.setTaxCalculated2(totalTax2);
             result1=totalTax1;
             result2=totalTax2;
             RES[0]=result1;
             RES[1]=result2;
+            this.userRepository.deleteAll();
             this.userRepository.save(tax);
         } else{
             double totalTax1=(total1-1500000)*0.3;
             double totalTax2=(total2-1500000)*0.3;
-            tax.setTaxCalculated1(totalTax1);
-            tax.setTaxCalculated2(totalTax2);
+            tax.setTax1(totalTax1);
+            tax.setTax2(totalTax2);
             taxCal.setTaxCalculated1(totalTax1);
             taxCal.setTaxCalculated2(totalTax2);
             result1=totalTax1;
             result2=totalTax2;
             RES[0]=result1;
             RES[1]=result2;
+            this.userRepository.deleteAll();
             this.userRepository.save(tax);
         }
 

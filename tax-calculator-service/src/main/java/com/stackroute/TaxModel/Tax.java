@@ -17,7 +17,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Tax {
 
 
-    private Long id=105L;
+    private Long id=212L;
 
     private Double IFS;
 
@@ -49,9 +49,20 @@ public class Tax {
 
     private Double NPS;
 
-    private Double TaxCalculated1;
+    private Double Tax1;
 
-    private Double TaxCalculated2;
+    private Double Tax2;
+
+    private Double GTI1=0.00;
+
+    private Double Ded1=0.00;
+
+
+    private Double GTI2=0.00;
+
+    //@Column(name="Ded2")
+    private Double Ded2=0.00;
+
 
 //    public Tax(Long id, Double IFS) {
 //        super();
