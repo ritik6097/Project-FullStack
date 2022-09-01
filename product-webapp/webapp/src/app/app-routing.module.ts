@@ -11,6 +11,7 @@ import { ProfsectionComponent } from './profsection/profsection.component';
 import { BlogComponent } from './blog/blog.component';
 import { ShowblogsComponent } from './showblogs/showblogs.component';
 import { BlogprofileComponent } from './blogprofile/blogprofile.component';
+import { ChatComponent } from './chat/chat.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'about',component:AboutComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'profsection',component:ProfsectionComponent},
   {path:'blog',component:BlogComponent},
   {path:'showblogs',component:ShowblogsComponent},
-  {path:'blogprofile',component:BlogprofileComponent}
+  {path:'blogprofile',component:BlogprofileComponent},
+  {path:'chatservice',component:ChatComponent}
 ];
 
 

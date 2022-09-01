@@ -17,6 +17,7 @@ import { ProfsectionComponent } from './profsection/profsection.component';
 import { BlogComponent } from './blog/blog.component';
 import { ShowblogsComponent } from './showblogs/showblogs.component';
 import { BlogprofileComponent } from './blogprofile/blogprofile.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 
@@ -36,7 +37,8 @@ import { BlogprofileComponent } from './blogprofile/blogprofile.component';
     ProfsectionComponent,
     BlogComponent,
     ShowblogsComponent,
-    BlogprofileComponent
+    BlogprofileComponent,
+    ChatComponent
 
   ],
   imports: [
