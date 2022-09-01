@@ -17,10 +17,14 @@ import { ProfsectionComponent } from './profsection/profsection.component';
 import { BlogComponent } from './blog/blog.component';
 import { ShowblogsComponent } from './showblogs/showblogs.component';
 import { BlogprofileComponent } from './blogprofile/blogprofile.component';
+
+import { ChatComponent } from './chat/chat.component';
+
 import { TaxCalculatorComponent } from './tax-calculator/tax-calculator.component';
 import { TaxServiceService } from './tax-calculator/tax-service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 
@@ -42,6 +46,7 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
     ShowblogsComponent,
     BlogprofileComponent,
     TaxCalculatorComponent,
+    ChatComponent,
     
   ],
   imports: [
