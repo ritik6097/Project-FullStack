@@ -5,7 +5,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserServiceService } from '../user-service.service';
 import { Register } from './Register';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-register-user',
   templateUrl: './register-user.component.html',
@@ -15,8 +15,11 @@ export class RegisterUserComponent implements OnInit {
   // OBJECT OF THE required class
 register :Register=new Register();
    localemail:any="";
-  constructor(private userService:UserServiceService,private route:Router) { }
 
+
+
+  constructor(private userService:UserServiceService,private route:Router, private snack:MatSnackBar) { }
+ 
   ngOnInit(): void {
   }
 
@@ -27,11 +30,13 @@ register :Register=new Register();
      console.log(data);
      // alert the exception thrown by backend if there is any
      if(data.message){
-  alert(data.message);
+ this.snack.open(data.message,"cancel");
+  // alert(data.message);
 }
 // or give a alert for successfully registration
 else{
-  alert("successfully registered");
+  this.snack.open("user has been registered successfully", "cancel");
+ // alert("successfully registered");
 }
 // alert("successfully registered");
   },error=>{console.log(error)});

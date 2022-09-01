@@ -19,7 +19,8 @@ import { ShowblogsComponent } from './showblogs/showblogs.component';
 import { BlogprofileComponent } from './blogprofile/blogprofile.component';
 import { TaxCalculatorComponent } from './tax-calculator/tax-calculator.component';
 import { TaxServiceService } from './tax-calculator/tax-service.service';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -40,8 +41,8 @@ import { TaxServiceService } from './tax-calculator/tax-service.service';
     BlogComponent,
     ShowblogsComponent,
     BlogprofileComponent,
-    TaxCalculatorComponent
-
+    TaxCalculatorComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -49,8 +50,10 @@ import { TaxServiceService } from './tax-calculator/tax-service.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
-  providers: [TaxServiceService,HttpClient,HttpClientModule],
+  providers: [TaxServiceService,HttpClient,HttpClientModule,MatSnackBar],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
