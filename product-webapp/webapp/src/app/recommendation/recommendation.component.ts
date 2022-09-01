@@ -14,34 +14,55 @@ import { RecoService } from '../reco.service';
   styleUrls: ['./recommendation.component.css']
 })
 export class RecommendationComponent  {
-  advices : object[]= [];
+  advices : Model[]= [];
   final : string[] = [];
   json;
+  json1;
   mydata;
   mydata1;
-  constructor(private http : HttpClient){
+  constructor(private http : HttpClient, private recoservice: RecoService){
     
-    this.http.get('http://localhost:5500/advices').toPromise().then(
+    // this.http.get('http://localhost:5500/advices').toPromise().then(
+    //   data=>{
+        
+        
+    //     for(let key in data){
+    //       if(data.hasOwnProperty(key)){
+    //         this.advices.push(data[key]);
+    //         this.json = this.advices[0];
+    //         // console.log(this.json);
+            
+            
+
+    //       }
+    //     }
+
+
+       
+
+    //   });
+
+      this.http.get('http://localhost:8080/api/v1/GetTax').toPromise().then(
       data=>{
         
         
         for(let key in data){
           if(data.hasOwnProperty(key)){
             this.advices.push(data[key]);
-            this.json = this.advices[0];
-            console.log(this.json);
-            
-            
+            this.json1 = this.advices[0];
+            console.log(this.json1);    
 
           }
         }
-
-
-       
-
       });
   }
   
-  
+  ngOnInit(){
+    this.recoservice.getAllAlbums().subscribe({
+      next: advice=>{
+        this.advices=advice
+      }
+    })
+  }
   
 }

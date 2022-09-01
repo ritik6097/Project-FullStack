@@ -10,21 +10,27 @@
         <h1 id="h11">Tax Savings Plans</h1>
     </div>
 
-
-    <div id="div2"></div>
-    <div id="div3">
-        <p>{{json.advice1}}</p>
-        <p>{{json.advice2}}</p>
-        <p>{{json.advice3}}</p>
-        <p>{{json.advice4}}</p>
-        <p>{{json.advice5}}</p>
-        <p>{{json.advicr6}}</p>
-        <p>{{json.advice7}}</p>
-
+    <div id="div2">
+        <p id="tax1">
+            Your Tax According to Old Regime: {{json1.taxCalculated1}}
+        </p>
+    
+        <p id="tax2">
+            Your Tax According to New Regime: {{json1.taxCalculated2}}
+        </p>
     </div>
-    <div>
-        <button id="button1" ondblclick="getAllAlbums()">GET ADVICE</button>
-    </div>
+    
+        <div id="div3" *ngFor="let advice of advices">
+            <div id="advice">
+                <p>{{advice.advice1}}</p>
+                <p>{{advice.advice2}}</p>
+                <p>{{advice.advice3}}</p>
+                <p>{{advice.advice4}}</p>
+                <p>{{advice.advice5}}</p>
+                <p>{{advice.advice6}}</p>
+                <p>{{advice.advice7}}</p>
+            </div>
+        </div>
 
 </body>
 

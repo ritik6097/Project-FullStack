@@ -11,7 +11,7 @@ export class TaxServiceService {
 
   public saveNew(user:User){
     console.log(user);
-    return this.http.post("http://localhost:8083/api/v1/TaxCalculated",user, {responseType: 'text' as 'json'});
+    return this.http.post("http://localhost:8080/api/v1/TaxCalculated",user, {responseType: 'text' as 'json'});
   }
 
   

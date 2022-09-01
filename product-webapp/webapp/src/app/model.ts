@@ -1,10 +1,10 @@
 export interface Model {
-    Advice1: string;
-    Advice2: string;
-    Advice3: string;
-    Advice4: string;
-    Advice5: string;
-    Advice6: string;
-    Advice7: string;
+    advice1: string;
+    advice2: string;
+    advice3: string;
+    advice4: string;
+    advice5: string;
+    advice6: string;
+    advice7: string;
 
 }

@@ -6,17 +6,25 @@ import { Model } from './model';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class RecoService {
-  url: string =
-  "https://localhost:5500/advices";
+    url: string = 'http://localhost:5500/advices';
+    
     constructor(private _http: HttpClient) {}
+   
     getAllAlbums(): Observable<Model []> {
+      
       return this._http.get<Model []>(this.url)
         .pipe(
           tap(data =>
           console.log('All: ' + JSON.stringify(data)))
         );
     }
-
-
-}
+  }
+    
+    
+   
+  
+  
+        
