@@ -17,6 +17,9 @@ import { ProfsectionComponent } from './profsection/profsection.component';
 import { BlogComponent } from './blog/blog.component';
 import { ShowblogsComponent } from './showblogs/showblogs.component';
 import { BlogprofileComponent } from './blogprofile/blogprofile.component';
+import { TaxCalculatorComponent } from './tax-calculator/tax-calculator.component';
+import { TaxServiceService } from './tax-calculator/tax-service.service';
+
 
 
 
@@ -36,7 +39,8 @@ import { BlogprofileComponent } from './blogprofile/blogprofile.component';
     ProfsectionComponent,
     BlogComponent,
     ShowblogsComponent,
-    BlogprofileComponent
+    BlogprofileComponent,
+    TaxCalculatorComponent
 
   ],
   imports: [
@@ -46,7 +50,7 @@ import { BlogprofileComponent } from './blogprofile/blogprofile.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [HttpClient,HttpClientModule],
+  providers: [TaxServiceService,HttpClient,HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
