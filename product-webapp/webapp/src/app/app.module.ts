@@ -24,6 +24,7 @@ import { TaxCalculatorComponent } from './tax-calculator/tax-calculator.componen
 import { TaxServiceService } from './tax-calculator/tax-service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import { Navbar2Component } from './navbar2/navbar2.component';
 
 
 
@@ -47,6 +48,7 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
     BlogprofileComponent,
     TaxCalculatorComponent,
     ChatComponent,
+    Navbar2Component,
     
   ],
   imports: [
