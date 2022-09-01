@@ -30,11 +30,8 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
     "strictPropertyInitialization": false
-  }
-
-    "strictTemplates": true
   },
-  "compilerOptions": {
+"compilerOptions": {
     //...rest parameters
 
     "baseUrl": "src",
@@ -42,5 +39,4 @@
       "tslib" : ["path/to/node_modules/tslib/tslib.d.ts"]
     },
 }
-
 }
