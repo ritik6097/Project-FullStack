@@ -9,7 +9,7 @@ import { Model } from './model';
 
 
 export class RecoService {
-    url: string = 'http://localhost:5500/advices';
+    url: string = 'http://localhost:8098/recommendation-service/advices';
     
     constructor(private _http: HttpClient) {}
    
