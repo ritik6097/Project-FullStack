@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableRabbit
+@EnableDiscoveryClient
 public class EmailServiceApplication {
 
 	public static void main(String[] args) {

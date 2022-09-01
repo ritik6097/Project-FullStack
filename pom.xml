@@ -24,7 +24,7 @@
 
 	<modules>
 		<module>config-server</module>
-<!--		<module>eureka-server</module>-->
+		<module>eureka-server</module>
 		<module>api-gateway</module>
 		<module>user-service</module>
 		<module>authentication-service</module>
