@@ -10,34 +10,62 @@ import { Login } from './Login';
 })
 export class SecurityComponent implements OnInit {
 
-  login :Login=new Login();
+  login: Login = new Login();
 
   tkn;
 
-  authReq:any={
-    "email":"abc@gmail.com",
-    "password":"abc123"
+  email!: String;
+  password!: String;
+
+  authReq: any = {
+    "email": this.email,
+    "password": this.password
   }
 
-  constructor(private service:JwtClientService,private route :Router) { }
- 
+  constructor(private service: JwtClientService, private route: Router) { }
+
   ngOnInit(): void {
+
+  }
+  public sendEmailToUser(email){
+    let setu=this.service.sendEmail(email);
+    setu.subscribe(()=>{
+      console.log("message from security.ts")
+    });
+  }
+
+  public getAccessToken(authReq: any, logindata) {
+
+    let resp = this.service.generateToken(this.authReq);
+    resp.subscribe((data) => {
+      this.tkn = data
+      // console.log(this.tkn)
+      localStorage.setItem("token", this.tkn)
+      localStorage.setItem("user-email", logindata.value.email)
+      this.sendEmailToUser(localStorage.getItem('user-email'));
+      this.route.navigateByUrl("/profile-user")
+
+    }, () => {
+      alert("invalid Credentials")
+    })
+
+  }
+
+  public LoginUser() {
+    // console.log(loginform.email)
+  }
+
+
+  loginIntoApp(loginform) {
+
+    this.authReq = {
+      "email": loginform.value.email, 
+      "password": loginform.value.password
+    }
+
+    this.getAccessToken(this.authReq, loginform)
     
   }
 
-  public getAccessToken(authReq: any){
 
-    let resp = this.service.generateToken(authReq);
-    resp.subscribe(data=>this.tkn=data)
-
-  }
-
-  public LoginUser(){
-  }
-    onsubmit(){
-      this.getAccessToken(this.authReq)
-      console.log(this.tkn)
-      this.route.navigateByUrl("/profile-user")
-    }
-  
 }

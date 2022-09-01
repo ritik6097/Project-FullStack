@@ -4,16 +4,13 @@ import com.stackroute.model.Email;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.stackroute.emailservice.EmailServiceImpl;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/login")
 @Api(value="email service",description = "email service controller")
@@ -23,14 +20,18 @@ public class EmailController {
 	
 	@Autowired
 	private EmailServiceImpl emailservice;
-	
-	
-	@RequestMapping(value="/{emailId}/home",method=RequestMethod.GET)
+
+	@Autowired
+    private Email email;
+
+	@RequestMapping(value="/{emailId}",method=RequestMethod.GET)
 	public void sendMail(@PathVariable String emailId){
 
+		email.setEmailId(emailId);
+  System.out.println("===============>>.");
 		try{
-//		emailservice.sendSimpleMail(emailId);
-
+		emailservice.sendSimpleMail(email);
+			System.out.println("===============>>try.");
 			
 		} catch( Exception e ){
 			

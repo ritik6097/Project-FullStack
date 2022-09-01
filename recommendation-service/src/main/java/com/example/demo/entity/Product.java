@@ -13,235 +13,222 @@ public class Product {
 	//@Id
 	//@GeneratedValue(strategy=GenerationType.AUTO)
 	//private Long id;
-	
-	//@Column(name="IFS")
-	private int IFS;
-	
-	//@Column(name="IPHL")
-	private int IPHL;
-	
-	//@Column(name="IPL")
-	private int IPL;
-	
-	//@Column(name="EDS")
-	private int EDS;
-	
-	//@Column(name="OI")
-	private int OI;
-	
-	//@Column(name="RIR ")
-	private int RIR;
-	
-	//@Column(name="IFDS")
-	private int IFDS;
-	
-	//@Column(name="BD")
-	private int BD;
-	
-	//@Column(name="MD")
-	private int MD;
-	
-	//@Column(name="IOEL")
-	private int IOEL;
-	
-	//@Column(name="NPS")
-	private int NPS;
-	
-	//@Column(name="IFD")
-	private int IFD;
-	
-	//@Column(name="DTC")
-	private int DTC;
-	
-	//@Column(name="IOHL")
-	private int IOHL;
+
+	private Double IFS;
+
+	private Double IFI;
+
+	private Double IPHL;
+
+	private Double IPL;
+
+	private Double EDS;
+
+	private Double OI;
+
+	private Double RI;
+
+	private Double IDA;
+
+	private Double BD;
+
+	private Double IFD;
+
+	private Double MI;
+
+	private Double DTC;
+
+	private Double IEL;
+
+	private Double IHL;
+
+	private Double NPS;
 	
 	
 	//@Column(name="GTI1")
-	private int GTI1;
+	private Double GTI1;
 	
 	//@Column(name="Ded1")
-	private int Ded1;
+	private Double Ded1;
 	
 	//@Column(name="Tax1")
-	private int Tax1;
+	private Double Tax1;
 	
 	//@Column(name="GTI2")
-	private int GTI2;
+	private Double GTI2;
 	
 	//@Column(name="Ded2")
-	private int Ded2;
+	private Double Ded2;
 	
 	//@Column(name="Tax2")
-	private int Tax2;
-	
-	
-	
-	
-	public int getIFS() {
+	private Double Tax2;
+
+
+	public Double getIFS() {
 		return IFS;
 	}
 
-	public void setIFS( int IFS) {
+	public void setIFS(Double IFS) {
 		this.IFS = IFS;
 	}
 
-	public int getIPHL() {
+	public Double getIFI() {
+		return IFI;
+	}
+
+	public void setIFI(Double IFI) {
+		this.IFI = IFI;
+	}
+
+	public Double getIPHL() {
 		return IPHL;
 	}
-	
-	public void setIPHL( int IPHL) {
+
+	public void setIPHL(Double IPHL) {
 		this.IPHL = IPHL;
 	}
-	
-	public int getIPL() {
+
+	public Double getIPL() {
 		return IPL;
 	}
-	
-	public void setIPL( int IPL) {
+
+	public void setIPL(Double IPL) {
 		this.IPL = IPL;
 	}
-	
-	public int getEDS() {
+
+	public Double getEDS() {
 		return EDS;
 	}
-	
-	public void setEDS( int EDS) {
+
+	public void setEDS(Double EDS) {
 		this.EDS = EDS;
 	}
-	
-	public int getOI() {
+
+	public Double getOI() {
 		return OI;
 	}
-	
-	public void setOI( int OI) {
+
+	public void setOI(Double OI) {
 		this.OI = OI;
 	}
-	
-	public int getRIR() {
-		return RIR;
+
+	public Double getRI() {
+		return RI;
 	}
-	
-	public void setRIR( int RIR) {
-		this.RIR = RIR;
+
+	public void setRI(Double RI) {
+		this.RI = RI;
 	}
-	
-	public int getIFDS() {
-		return IFDS;
+
+	public Double getIDA() {
+		return IDA;
 	}
-	
-	public void setIFDS( int IFDS) {
-		this.IFDS = IFDS;
+
+	public void setIDA(Double IDA) {
+		this.IDA = IDA;
 	}
-	
-	public int getBD() {
+
+	public Double getBD() {
 		return BD;
 	}
-	
-	public void setBD( int BD) {
+
+	public void setBD(Double BD) {
 		this.BD = BD;
 	}
-	
-	public int getMD() {
-		return MD;
-	}
-	
-	public void setMD( int MD) {
-		this.MD = MD;
-	}
-	
-	public int getIOEL() {
-		return IOEL;
-	}
-	
-	public void setIOEL( int IOEL) {
-		this.IOEL = IOEL;
-	}
-	
-	public int getNPS() {
-		return NPS;
-	}
-	
-	public void setNPS( int NPS) {
-		this.NPS = NPS;
-	}
-	
-	public int getIFD() {
+
+	public Double getIFD() {
 		return IFD;
 	}
-	
-	public void setIFD( int IFD) {
+
+	public void setIFD(Double IFD) {
 		this.IFD = IFD;
 	}
-	public int getDTC() {
+
+	public Double getMI() {
+		return MI;
+	}
+
+	public void setMI(Double MI) {
+		this.MI = MI;
+	}
+
+	public Double getDTC() {
 		return DTC;
 	}
-	
-	public void setDTC( int DTC) {
+
+	public void setDTC(Double DTC) {
 		this.DTC = DTC;
 	}
-	
-	public int getIOHL() {
-		return IOHL;
+
+	public Double getIEL() {
+		return IEL;
 	}
-	
-	public void setIOHL( int IOHL) {
-		this.IOHL = IOHL;
+
+	public void setIEL(Double IEL) {
+		this.IEL = IEL;
 	}
-	
-	public int getGTI1() {
+
+	public Double getIHL() {
+		return IHL;
+	}
+
+	public void setIHL(Double IHL) {
+		this.IHL = IHL;
+	}
+
+	public Double getNPS() {
+		return NPS;
+	}
+
+	public void setNPS(Double NPS) {
+		this.NPS = NPS;
+	}
+
+	public Double getGTI1() {
 		return GTI1;
 	}
-	
-	public void setGTI1( int GTI1) {
+
+	public void setGTI1(Double GTI1) {
 		this.GTI1 = GTI1;
 	}
-	
-	public int getDed1() {
+
+	public Double getDed1() {
 		return Ded1;
 	}
-	
-	public void setDed1( int Ded1) {
-		this.Ded1 = Ded1;
+
+	public void setDed1(Double ded1) {
+		Ded1 = ded1;
 	}
-	
-	public int getTax1() {
+
+	public Double getTax1() {
 		return Tax1;
 	}
-	
-	public void setTax1( int Tax1) {
-		this.Tax1 = Tax1;
+
+	public void setTax1(Double tax1) {
+		Tax1 = tax1;
 	}
-	
-	public int getGTI2() {
+
+	public Double getGTI2() {
 		return GTI2;
 	}
-	
-	public void setGTI2( int GTI2) {
+
+	public void setGTI2(Double GTI2) {
 		this.GTI2 = GTI2;
 	}
-	
-	public int getDed2() {
+
+	public Double getDed2() {
 		return Ded2;
 	}
-	
-	public void setDed2( int Ded2) {
-		this.Ded2 = Ded2;
+
+	public void setDed2(Double ded2) {
+		Ded2 = ded2;
 	}
-	
-	public int getTax2() {
+
+	public Double getTax2() {
 		return Tax2;
 	}
-	
-	public void setTax2( int Tax2) {
-		this.Tax2 = Tax2;
+
+	public void setTax2(Double tax2) {
+		Tax2 = tax2;
 	}
-
-
-
-
-	
-	
-	
-
 }

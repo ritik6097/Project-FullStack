@@ -5,11 +5,12 @@ import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
+  
 })
 
 export class UserdetailsService {
 
-  getlocalemail:string | null=localStorage.getItem('local');
+  getlocalemail:string | null=localStorage.getItem('user-email');
   //localStorage.getItem('local') ;
  // here provide your base url
  private baseurl="http://localhost:8082/myprofile/getprofile";

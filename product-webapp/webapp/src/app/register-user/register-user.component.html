@@ -12,7 +12,7 @@
  
 <form  (ngSubmit)="registeruser()" #registerform="ngForm">
   <!--<h4 class="text-warning text-center  pt-5" >Registration Page</h4>-->
-  <h3 style="color: rgb(97, 126, 233);" class=" text-center pt-5">Register</h3>
+  <h3 style="color: black; font-weight: bold;" class=" text-center pt-5">Register</h3>
   <div class="form-group row">
       <label for="email" class="col-sm-2 col-form-label">Email</label>
       <div class="col-sm-8">
@@ -40,7 +40,7 @@
     <span *ngIf="password.value != confirmpassword.value && confirmpassword.dirty" class="error" style="color: red;" >password and confirm password should be same</span>
       </div>
   </div>
-  <div style="text-align: center; "><button type="submit" class="btn btn-primary " [class.disabled]="!registerform.valid">Submit</button></div>
+  <div style="text-align: center; "><button type="submit" class="btn btn-primary  btn-lg" [class.disabled]="!registerform.valid">Submit</button></div>
    <!--(click)="onsubmit()"-->
   
 </form>

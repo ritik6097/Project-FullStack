@@ -42,6 +42,9 @@ public class CustomMessage {
 
     private Double NPS;
 
-    private Double TaxCalculated;
+    private Double Tax1;
+
+    private Double Tax2;
+
 
 }

@@ -11,7 +11,11 @@ import { ProfsectionComponent } from './profsection/profsection.component';
 import { BlogComponent } from './blog/blog.component';
 import { ShowblogsComponent } from './showblogs/showblogs.component';
 import { BlogprofileComponent } from './blogprofile/blogprofile.component';
+<<<<<<< HEAD
 import { ChatComponent } from './chat/chat.component';
+=======
+import { TaxCalculatorComponent } from './tax-calculator/tax-calculator.component';
+>>>>>>> 75a5e7afd1828f9f15327a0481536ea03b5c01ce
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'about',component:AboutComponent},
@@ -19,6 +23,7 @@ const routes: Routes = [
   {path:'register-user',component:RegisterUserComponent},
   {path:'login', component:SecurityComponent},
   {path:'recommendation',component:RecommendationComponent},
+  {path: 'tax-calculator',component:TaxCalculatorComponent},
   {path:'getprofile',component:GetprofileComponent},
   {path:'profsection',component:ProfsectionComponent},
   {path:'blog',component:BlogComponent},

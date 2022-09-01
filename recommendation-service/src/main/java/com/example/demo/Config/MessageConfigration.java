@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
     public class MessageConfigration {
 
-    private String exchangeName="RITIK";
-    private String registerQueue="test";
+    private String exchangeName="Recomendation";
+    private String registerQueue="message_queue";
 
 
         @Bean
@@ -35,7 +35,7 @@ import org.springframework.context.annotation.Configuration;
     @Bean
     Binding bindingUser(Queue registerQueue, DirectExchange exchange)
     {
-        return BindingBuilder.bind(registerQueue()).to(exchange).with("routing_key_test");
+        return BindingBuilder.bind(registerQueue()).to(exchange).with("message_routingKey");
     }
 
 }
