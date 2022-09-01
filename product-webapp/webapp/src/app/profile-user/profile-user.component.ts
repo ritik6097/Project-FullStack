@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProfileService } from '../profile.service';
 import { User } from './User';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-profile-user',
   templateUrl: './profile-user.component.html',
@@ -12,7 +12,7 @@ export class ProfileUserComponent implements OnInit {
   // OBJECT OF THE required class
  user:User=new User();
 
-  constructor(private route: Router,private profileservice:ProfileService) { }
+  constructor(private route: Router,private profileservice:ProfileService,private snack:MatSnackBar) { }
 
   ngOnInit(): void {
   
@@ -25,11 +25,13 @@ export class ProfileUserComponent implements OnInit {
     console.log(data);
      // alert the exception thrown by backend if there is any
      if(data.message){
-      alert(data.message);
+this.snack.open(data.message);
+     // alert(data.message);
     }
     // or give a alert for successfully profile updation
     else{
-      alert("successfully updated your details");
+  this.snack.open("successfully updated your details","Remove")
+     // alert("successfully updated your details");
     }
   },
     

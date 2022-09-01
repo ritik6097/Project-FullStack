@@ -15,7 +15,7 @@
   <div class="form-group row">
      
       <div class="col-sm-6 " >
-        <input required=""  #firstName="ngModel" ngModel=""  type="text" class="form-control" id="firstName" [(ngModel)] = "user.firstName" placeholder="firstname" name="firstname">
+        <input required=""  #firstName="ngModel" ngModel=""  type="text" class="form-control" id="firstName" [(ngModel)] = "user.firstName"  value="{{firstName}}" placeholder="firstname" name="firstname">
         <span *ngIf="firstName.invalid && firstName.touched" class="error" style="color:red ;">firstName is requred</span>
       </div>
     <div class="col-sm-6">

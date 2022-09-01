@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtClientService } from '../services/jwt-client.service';
 import { Login } from './Login';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-security',
   templateUrl: './security.component.html',
@@ -22,7 +22,7 @@ export class SecurityComponent implements OnInit {
     "password": this.password
   }
 
-  constructor(private service: JwtClientService, private route: Router) { }
+  constructor(private service: JwtClientService, private route: Router,private snack:MatSnackBar) { }
 
   ngOnInit(): void {
 
@@ -41,12 +41,21 @@ export class SecurityComponent implements OnInit {
       this.tkn = data
       // console.log(this.tkn)
       localStorage.setItem("token", this.tkn)
-      localStorage.setItem("user-email", logindata.value.email)
+      // localStorage.setItem("user-email", logindata.value.email)
       this.sendEmailToUser(localStorage.getItem('user-email'));
-      this.route.navigateByUrl("/profile-user")
-
+        // route to home or profile as per their frequency
+      if(localStorage.getItem('user-email')==logindata.value.email)
+      {
+      this.route.navigateByUrl("/");
+      }
+      else{
+        this.route.navigateByUrl("/profile-user");
+        localStorage.setItem("user-email", logindata.value.email)
+      }
+      
     }, () => {
-      alert("invalid Credentials")
+      this.snack.open("invalid Credentials","Remove")
+     // alert("invalid Credentials")
     })
 
   }
