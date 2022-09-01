@@ -1,0 +1,54 @@
+.container{ 
+    overflow: hidden;
+    width: auto;
+    background-color: rgb(239, 241, 247);
+    margin-top: 10%;
+    height: 400px;
+    margin-bottom: 100px;
+}
+.col-3{
+   background-color:#397ef6; 
+   height: 500px;
+}
+.we{
+   margin-top: 100px; 
+   margin-left: 70px;
+}
+.message{
+    color: white;
+    padding-left: 60px;
+
+}
+.message2{
+    color: white;
+    padding-left: 97px;
+
+}
+input.ng-invalid{
+    border-left: 5px solid red
+    
+}
+input.ng-valid{
+    border-left: 5px solid green;
+}
+
+#input-user{
+    
+    margin-top: 30px;
+}
+
+#input-message{
+    margin-top: 30px;
+}
+            
+#sendbtn{
+    margin-top: 30px;
+    margin-left: 110px;
+}
+
+
+
+
+
+
+

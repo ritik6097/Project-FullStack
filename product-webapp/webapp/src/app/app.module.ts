@@ -17,8 +17,12 @@ import { ProfsectionComponent } from './profsection/profsection.component';
 import { BlogComponent } from './blog/blog.component';
 import { ShowblogsComponent } from './showblogs/showblogs.component';
 import { BlogprofileComponent } from './blogprofile/blogprofile.component';
+
+import { ChatComponent } from './chat/chat.component';
+
 import { TaxCalculatorComponent } from './tax-calculator/tax-calculator.component';
 import { TaxServiceService } from './tax-calculator/tax-service.service';
+
 
 
 
@@ -40,7 +44,11 @@ import { TaxServiceService } from './tax-calculator/tax-service.service';
     BlogComponent,
     ShowblogsComponent,
     BlogprofileComponent,
+
+    ChatComponent,
+
     TaxCalculatorComponent
+
 
   ],
   imports: [
