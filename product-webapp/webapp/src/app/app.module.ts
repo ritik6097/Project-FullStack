@@ -17,13 +17,13 @@ import { ProfsectionComponent } from './profsection/profsection.component';
 import { BlogComponent } from './blog/blog.component';
 import { ShowblogsComponent } from './showblogs/showblogs.component';
 import { BlogprofileComponent } from './blogprofile/blogprofile.component';
-<<<<<<< HEAD
+
 import { ChatComponent } from './chat/chat.component';
-=======
+
 import { TaxCalculatorComponent } from './tax-calculator/tax-calculator.component';
 import { TaxServiceService } from './tax-calculator/tax-service.service';
 
->>>>>>> 7f3356c0952a4cb90fb02eb28828dc61dc9ffcc2
+
 
 
 
@@ -44,11 +44,11 @@ import { TaxServiceService } from './tax-calculator/tax-service.service';
     BlogComponent,
     ShowblogsComponent,
     BlogprofileComponent,
-<<<<<<< HEAD
-    ChatComponent
-=======
+
+    ChatComponent,
+
     TaxCalculatorComponent
->>>>>>> 7f3356c0952a4cb90fb02eb28828dc61dc9ffcc2
+
 
   ],
   imports: [
