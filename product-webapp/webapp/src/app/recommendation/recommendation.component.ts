@@ -42,7 +42,7 @@ export class RecommendationComponent  {
 
     //   });
 
-      this.http.get('http://localhost:8080/api/v1/GetTax').toPromise().then(
+      this.http.get('http://localhost:8098/tax-calculator-service/api/v1/GetTax').toPromise().then(
       data=>{
         
         
