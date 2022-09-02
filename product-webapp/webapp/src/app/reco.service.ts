@@ -10,7 +10,9 @@ import {User} from './tax-calculator/user.model';
 
 
 export class RecoService {
-    url: string = 'http://localhost:8098/recommendation-service/advices';
+
+  baseUrl = "https://walletbooster.stackroute.io"
+    url: string = this.baseUrl + "/recommendation-service/advices";
     user : User[]=[];
     
     constructor(private http: HttpClient) {}
