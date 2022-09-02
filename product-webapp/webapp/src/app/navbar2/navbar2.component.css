@@ -1,0 +1,39 @@
+.navbar-light .navbar-nav .nav-link.active-link
+{
+    color: black;
+}
+
+
+
+.navbar{
+    background-color: #f4f1de;
+}
+
+.container-fluid a{
+    text-decoration: none;
+}
+
+
+
+.logotext{    
+    font-size: 35px;
+    font-weight: 700;
+    background: #5A36CF;
+background: linear-gradient(45deg, #5A36CF 26%, #1BCF1B 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+
+
+.nav-link{
+    color: black;
+    font-size: 20px;
+    margin: auto 8px;
+}
+
+.nav-link:hover{
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 5px;
+}

@@ -25,12 +25,22 @@ export class ProfileUserComponent implements OnInit {
     console.log(data);
      // alert the exception thrown by backend if there is any
      if(data.message){
-this.snack.open(data.message);
+this.snack.open(data.message, "Remove", {
+  duration:4000,
+  horizontalPosition:'center',
+  verticalPosition:'top'
+  
+});
      // alert(data.message);
     }
     // or give a alert for successfully profile updation
     else{
-  this.snack.open("successfully updated your details","Remove")
+  this.snack.open("successfully updated your details","Remove", {
+    duration:4000,
+    horizontalPosition:'center',
+    verticalPosition:'top'
+    
+  })
      // alert("successfully updated your details");
     }
   },

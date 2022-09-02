@@ -12,13 +12,13 @@ export class JwtClientService {
 
   public generateToken(request) {
     
-    return this.http.post("http://localhost:8087/authenticate", request,{responseType: "text" as "json"} )
+    return this.http.post("http://localhost:8080/authentication-service/authenticate", request,{responseType: "text" as "json"} )
   }
 
   public hello(token){
     let tokenStr = "Bearer "+ token;
     const headers = new HttpHeaders().set("Authorization", tokenStr)
-    return this.http.get("http://localhost:8087/", {headers, responseType:"text" as "json"})
+    return this.http.get("http://localhost:8080/authentication-service/", {headers, responseType:"text" as "json"})
 
   }
   // getlocalemail:string | null=localStorage.getItem('user-email');
@@ -26,7 +26,7 @@ export class JwtClientService {
 
   // console.log('hii===================>>>>');
   // console.log("http://localhost:8085/login/" +email);
-    return this.http.get("http://localhost:8085/login/" +email)
+    return this.http.get("http://localhost:8080/email-service/login/" +email)
    
   }
 }

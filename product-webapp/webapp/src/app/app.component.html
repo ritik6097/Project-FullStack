@@ -1,7 +1,18 @@
 
 
-<!-- navbar -->
-<app-navbar></app-navbar>
+
+<div *ngIf="userNameOnNavBar2 !== null; else elseBlock">
+
+
+    <!-- navbar2 -->
+    <app-navbar2></app-navbar2>
+</div>
+<ng-template #elseBlock>
+    <!-- navbar -->
+    <app-navbar></app-navbar>
+</ng-template>
+
+
 
 <!-- <app-chat> </app-chat> -->
 <router-outlet></router-outlet>

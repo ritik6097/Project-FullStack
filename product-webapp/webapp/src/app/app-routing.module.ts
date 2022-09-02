@@ -15,6 +15,7 @@ import { BlogprofileComponent } from './blogprofile/blogprofile.component';
 import { ChatComponent } from './chat/chat.component';
 
 import { TaxCalculatorComponent } from './tax-calculator/tax-calculator.component';
+import { Navbar2Component } from './navbar2/navbar2.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -29,7 +30,10 @@ const routes: Routes = [
   {path:'blog',component:BlogComponent},
   {path:'showblogs',component:ShowblogsComponent},
   {path:'blogprofile',component:BlogprofileComponent},
-  {path:'chatservice',component:ChatComponent}
+  {path:'chatservice',component:ChatComponent},
+  {path:'logout',redirectTo: ''},
+  {path:'home',redirectTo: ''},
+
 ];
 
 

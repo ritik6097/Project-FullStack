@@ -30,12 +30,22 @@ register :Register=new Register();
      console.log(data);
      // alert the exception thrown by backend if there is any
      if(data.message){
- this.snack.open(data.message,"cancel");
+ this.snack.open(data.message,"cancel", {
+  duration:4000,
+  horizontalPosition:'center',
+  verticalPosition:'top'
+  
+});
   // alert(data.message);
 }
 // or give a alert for successfully registration
 else{
-  this.snack.open("user has been registered successfully", "cancel");
+  this.snack.open("user has been registered successfully", "cancel",{
+    duration:4000,
+    horizontalPosition:'center',
+    verticalPosition:'top'
+    
+  });
  // alert("successfully registered");
 }
 // alert("successfully registered");

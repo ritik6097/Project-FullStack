@@ -1,1 +1,40 @@
-<p>navbar2 works!</p>
+
+<nav class="navbar navbar-expand-lg">
+
+
+    <div class="container-fluid">
+        <a href="/">
+            <ul class="nav">
+                <li class="nav-item ml-5"><img src="https://i.ibb.co/HT8KZRP/logo6.png" alt="logo" width="50px"></li>
+                <li class="nav-item ml-4">
+                    <div class="logotext">WalletBooster</div>
+                </li>
+            </ul>
+        </a>
+
+
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link " href="/about">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/showblogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tax-calculator">Tax Calculator</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{userNameOnNavBar2}}
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/getprofile">Get Profile</a></li>
+                  <li><a class="dropdown-item" href="/profile-user">Edit Profile</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/logout" (click)="onLogout()">Logout</a></li>
+                </ul>
+              </li>
+
+        </ul>
+    </div>
+</nav>

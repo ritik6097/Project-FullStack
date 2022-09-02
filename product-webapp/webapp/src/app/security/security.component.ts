@@ -54,7 +54,12 @@ export class SecurityComponent implements OnInit {
       }
       
     }, () => {
-      this.snack.open("invalid Credentials","Remove")
+      this.snack.open("invalid Credentials","Remove", {
+        duration:4000,
+        horizontalPosition:'center',
+        verticalPosition:'top'
+        
+      })
      // alert("invalid Credentials")
     })
 

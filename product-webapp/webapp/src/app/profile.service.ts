@@ -12,7 +12,7 @@ export class ProfileService {
   
    
   // here provide your base url
-  private baseurl="http://localhost:8082/myprofile/update";
+  private baseurl="http://localhost:8080/user-service/myprofile/update";
 // here in costructor take private http client after importing httpmodule into your app.module.ts
   constructor(private httpclient:HttpClient) { }
 // here create method the method that should be responsible for updating the profile
@@ -20,7 +20,7 @@ export class ProfileService {
    // this.getlocalemail=localStorage.getItem('local') ;
    // return this.httpclient.put(`${this.baseurl}/getlocalemail`,user);
   // console.log("http://localhost:8082/myprofile/update/" +this.getlocalemail);
-   return this.httpclient.put("http://localhost:8082/myprofile/update/" +this.getlocalemail,user);
+   return this.httpclient.put("http://localhost:8080/user-service/myprofile/update/" +this.getlocalemail,user);
 
   }
 }
