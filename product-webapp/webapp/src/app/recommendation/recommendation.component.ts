@@ -8,7 +8,6 @@ import { Model } from '../model';
 import { Observable } from 'rxjs';
 import { RecoService } from '../reco.service';
 import { CaltaxService } from '../caltax.service';
-import { User } from '../user.model';
 import { Tax } from '../tax.model';
 
 @Component({

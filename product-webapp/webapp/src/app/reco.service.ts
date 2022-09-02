@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Model } from './model';
-import {User} from './user.model';
+import {User} from './tax-calculator/user.model';
 @Injectable({
   providedIn: 'root'
 })

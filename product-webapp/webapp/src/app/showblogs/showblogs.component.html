@@ -1,50 +1,71 @@
 <!-- As a heading -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
-   <br>
-   <br>
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css"
+    integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+<br>
+
+
+
+  <div class="container">
+    <div class="row g-0 bg-light position-relative">
+        <div class="col-md-6 mb-md-0 p-md-4">
+            <a href="/blog">
+                <img src="https://i.ibb.co/gWCVpLk/addblog.png" class="w-100" alt="...">
+            </a>
+        </div>
+        <div class="col-md-6 p-4 ps-md-0">
+          <h5 class="mt-0">Start your Blog Journey on Finance</h5>
+          <p>At its most basic, blogs can help you develop an online presence, prove yourself an expert in an industry, and attract more quality leads to all pages of your site. If you're contemplating creating a blog for your business, or simply want to know what one is, keep reading.</p>
+          <a href="/blog" class="stretched-link" style="text-decoration: none;">Continue >></a>
+        </div>
+      </div>
+  </div>
+
+  <br>
+
   <div class="container-fluid mt-100 mt-60">
-      <div class="row">
-          <div class="col-12 text-center">
-              <div class="section-title mb-4 pb-2">
-                  <h4 class="title mb-4">Latest Blog &amp; News</h4>
-                  <p class="text-muted para-desc mx-auto mb-0">Conversation is king. Content is just something to talk about. </p>.
-              </div>
-          </div><!--end col-->
-      </div><!--end row-->
-    
-       <div class="blog">
-       <div class="row"*ngFor="let i of blogdata">
-        <div class="col-lg-4 col-md-6 mt-4 pt-2 cards">
-              <div class="blog-post rounded border">
-                  <div class="blog-img d-block overflow-hidden position-relative">
-                      <img src="../../assets/img/pexels-photo-3695297.jpeg" class="img-fluid rounded-top" alt="">
-                      <div class="overlay rounded-top bg-dark"></div>
-                      <div class="post-meta">
-                          <a href="javascript:void(0)" class="text-light read-more"routerLink="readmore" (click)="onsubmit(i.id)" >Read More <i class="mdi mdi-chevron-right"></i></a>
-                      </div>
-                  </div>
-                  <div class="content p-3">
-                    <h4 class="mt-2"><a href="javascript:void(0)" class="text-dark title">{{i.title}}</a></h4>
-                    <p class="text-muted mt-2"></p>
-                    <div class="pt-3 mt-3 border-top d-flex">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
-                        <div class="author mt-2">
-                            <h6 class="mb-0"><a href="javascript:void(0)" class="text-dark name">&nbsp;{{i.name}}</a></h6>
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="section-title mb-4 pb-2">
+                <h4 class="title mb-4">Latest Blog &amp; News</h4>
+                <p class="text-muted para-desc mx-auto mb-0">Conversation is king. Content is just something to talk
+                    about. </p>.
+            </div>
+        </div>
+        <!--end col-->
+    </div>
+    <!--end row-->
+
+    <div class="blog">
+        <div class="row" *ngFor="let i of blogdata">
+            <div class="col-lg-4 col-md-6 mt-4 pt-2 cards">
+                <div class="blog-post rounded border">
+                    <div class="blog-img d-block overflow-hidden position-relative">
+                        <img src="https://source.unsplash.com/random/500x300/?finance,money,coin"
+                            class="img-fluid rounded-top" alt="">
+                        <div class="overlay rounded-top bg-dark"></div>
+                        <div class="post-meta">
+                            <a href="javascript:void(0)" class="text-light read-more" routerLink="readmore"
+                                (click)="onsubmit(i.id)">Read More <i class="mdi mdi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="content p-3">
+                        <h4 class="mt-2"><a href="javascript:void(0)" class="text-dark title">{{i.title}}</a></h4>
+                        <p class="text-muted mt-2"></p>
+                        <div class="pt-3 mt-3 border-top d-flex">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                class="img-fluid avatar avatar-ex-sm rounded-pill mr-3 shadow" alt="">
+                            <div class="author mt-2">
+                                <h6 class="mb-0"><a href="javascript:void(0)"
+                                        class="text-dark name">&nbsp;{{i.name}}</a></h6>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div><!--end blog post-->
+                <!--end blog post-->
+            </div>
         </div>
     </div>
-       </div>
-       <div class="row row2">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
+</div>
 
-
-
-
-                
-                    
-                        
-                                
-                            
+<br>
