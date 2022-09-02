@@ -7,11 +7,12 @@ import { User } from './user.model';
 })
 export class TaxServiceService {
 
+  baseUrl = "https://walletbooster.stackroute.io"
   constructor(private http:HttpClient) { }
 
   public saveNew(user:User){
     console.log(user);
-    return this.http.post("http://localhost:8098/tax-calculator-service/api/v1/TaxCalculated",user, {responseType: 'text' as 'json'});
+    return this.http.post(this.baseUrl + "/tax-calculator-service/api/v1/TaxCalculated",user, {responseType: 'text' as 'json'});
   }
 
   

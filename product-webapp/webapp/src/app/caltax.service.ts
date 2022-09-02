@@ -9,7 +9,9 @@ import { Tax } from './tax.model';
 
 
 export class CaltaxService {
-    url: string = 'http://localhost:8098/tax-calculator-service/api/v1/GetTax';
+
+  baseUrl = "https://walletbooster.stackroute.io"
+    url: string = this.baseUrl + "/tax-calculator-service/api/v1/GetTax";
     tax : Tax[]=[];
     
     constructor(private http: HttpClient) {}
