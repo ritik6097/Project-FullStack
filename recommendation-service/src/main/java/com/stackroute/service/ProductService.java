@@ -1,22 +1,21 @@
-package com.example.demo.service;
+package com.stackroute.service;
 import java.util.List;
-import java.util.Optional;
 
+import com.stackroute.entity.Advice;
+import com.stackroute.repository.AdviceRepository;
+import com.stackroute.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.google.gson.Gson;
 import org.json.simple.JSONObject;
 
-import com.example.demo.entity.Advice;
-import com.example.demo.entity.Product;
-import com.example.demo.repository.AdviceRepository;
-import com.example.demo.repository.ProductRepository;
+import com.stackroute.entity.Product;
+
 @Service
 public class ProductService{
 	@Autowired
-	ProductRepository productRepository;
+    ProductRepository productRepository;
 	@Autowired
-	AdviceRepository  adviceRepository;
+    AdviceRepository adviceRepository;
 	String[] myString = new String[7];
 	String[] myAdvice = {"Advice1","Advice2","Advice3","Advice4","Advice5","Advice6","Advice7"};
 	

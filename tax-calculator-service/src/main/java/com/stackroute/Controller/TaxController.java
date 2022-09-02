@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = ("api/v1/"))
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 
 public class TaxController {
 

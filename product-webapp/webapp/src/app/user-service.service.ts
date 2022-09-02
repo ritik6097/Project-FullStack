@@ -8,7 +8,10 @@ import { Register } from './register-user/Register';
 })
 
 export class UserServiceService {
-private baseurl="http://localhost:8080/user-service/myprofile/save";
+// private baseurl="http://localhost:8080/user-service/myprofile/save";
+
+private baseurl="https://WalletBooster.stackroute.io/user-service/myprofile/save";
+
   constructor(private httpclient:HttpClient) { }
   createUser(register:Register):Observable<any>{
     return this.httpclient.post(`${this.baseurl}`,register);

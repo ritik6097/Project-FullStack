@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.stackroute.entity;
 import javax.persistence.Entity;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;

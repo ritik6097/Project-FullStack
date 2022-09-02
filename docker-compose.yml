@@ -17,7 +17,7 @@ services:
     network_mode: host
     hostname: localhost
     ports:
-      - 6002:6002
+      - 8761:8761
     depends_on:
       - config-server
 
@@ -88,6 +88,7 @@ services:
       - eureka-server
       - config-server
       - rabbitmq
+      - mysql
     restart: always
 
   email-service:

@@ -10,7 +10,7 @@ import com.stackroute.emailservice.EmailServiceImpl;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-@CrossOrigin("*")
+//@CrossOrigin("*")
 @RestController
 @RequestMapping("/login")
 @Api(value="email service",description = "email service controller")

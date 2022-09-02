@@ -1,9 +1,9 @@
-package com.example.demo.Config;
+package com.stackroute.Config;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.example.demo.entity.Product;
-import com.example.demo.service.ProductService;
+import com.stackroute.entity.Product;
+import com.stackroute.service.ProductService;
 @Component
 public class Consumer {
     @Autowired
