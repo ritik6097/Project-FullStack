@@ -56,7 +56,7 @@ else{
     this.saveUser();
     this.onsubmit();
  this.localemail=this.register.email;
- localStorage.setItem('local',this.localemail);
+// localStorage.setItem('local',this.localemail);
   }
   
   onsubmit(){
