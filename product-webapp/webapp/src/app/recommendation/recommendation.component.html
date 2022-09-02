@@ -5,32 +5,33 @@
     <link rel="stylesheet" href="./recommendation.component.css">
 </head>
 
-<body>
+<body (onmouseover)="Refresh()">
     <div id="div1">
         <h1 id="h11">Tax Savings Plans</h1>
     </div>
 
-    <div id="div2">
-        <p id="tax1">
-            Your Tax According to Old Regime: {{json1.taxCalculated1}}
-        </p>
+    <div id="div2" *ngFor="let tax of taxes">
+        <div id="tax1">
+            Your Tax According to Old Regime: <div id="tax11"> {{tax.taxCalculated1}} </div>
+        </div>
     
-        <p id="tax2">
-            Your Tax According to New Regime: {{json1.taxCalculated2}}
-        </p>
+        <div id="tax2">
+            Your Tax According to New Regime: <div id="tax22">{{tax.taxCalculated2}} </div>
+        </div>
     </div>
     
         <div id="div3" *ngFor="let advice of advices">
             <div id="advice">
-                <p>{{advice.advice1}}</p>
-                <p>{{advice.advice2}}</p>
-                <p>{{advice.advice3}}</p>
-                <p>{{advice.advice4}}</p>
-                <p>{{advice.advice5}}</p>
-                <p>{{advice.advice6}}</p>
-                <p>{{advice.advice7}}</p>
+                <div id="ad1">{{advice.advice1}}</div>
+                <div id="ad2">{{advice.advice2}}</div>
+                <div id="ad3">{{advice.advice3}}</div>
+                <div id="ad4">{{advice.advice4}}</div>
+                <div id="ad5">{{advice.advice5}}</div>
+                <div id="ad6">{{advice.advice6}}</div>
+                <div id="ad7">{{advice.advice7}}</div>
             </div>
         </div>
+
 
 </body>
 

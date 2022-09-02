@@ -1,4 +1,4 @@
-version: "2"
+version: "3.3"
 
 services:
   config-server:
@@ -58,8 +58,8 @@ services:
     #    cap_add:
     #      - SYS_NICE
     environment:
-      MYSQL_ROOT_PASSWORD: 'Password'
-      MYSQL_DATABASE: authuser
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: authapp
       MYSQL_PASSWORD: root
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
 
@@ -100,7 +100,6 @@ services:
     depends_on:
       - eureka-server
       - config-server
-      - rabbitmq
     restart: always
 
   product-webapp:
@@ -115,8 +114,8 @@ services:
       - eureka-server
 
   blog:
-    container_name: blog
-    build: blog/
+    container_name: Blog
+    build: Blog/
     hostname: localhost
     network_mode: host
     ports:

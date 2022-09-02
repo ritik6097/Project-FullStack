@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
-import { Model } from './model';
-import {User} from './user.model';
+import { Tax } from './tax.model';
 @Injectable({
   providedIn: 'root'
 })
 
 
-export class RecoService {
-    url: string = 'http://localhost:8098/recommendation-service/advices';
-    user : User[]=[];
+export class CaltaxService {
+    url: string = 'http://localhost:8098/tax-calculator-service/api/v1/GetTax';
+    tax : Tax[]=[];
     
     constructor(private http: HttpClient) {}
 
@@ -21,13 +20,13 @@ export class RecoService {
       return this.refreshRequired;
     }
    
-    getAllAlbums(): Observable<Model []> {
+    getAllTax(): Observable<Tax []> {
       
-      return this.http.get<Model []>(this.url)
+      return this.http.get<Tax []>(this.url)
         .pipe(
           tap(data =>
             this.RefreshRequired.next()
-            //console.log('All: ' + JSON.stringify(data)))
+          //console.log('All: ' + JSON.stringify(data)))
         ));
     }
     
