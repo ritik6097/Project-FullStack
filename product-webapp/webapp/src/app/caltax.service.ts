@@ -12,6 +12,8 @@ export class CaltaxService {
 
   baseUrl = "https://walletbooster.stackroute.io"
     url: string = this.baseUrl + "/tax-calculator-service/api/v1/GetTax";
+  // baseUrl="http://localhost:8080"
+  // url: string = this.baseUrl + "/tax-calculator-service/api/v1/GetTax";
     tax : Tax[]=[];
     
     constructor(private http: HttpClient) {}

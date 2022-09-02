@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <link rel="stylesheet" href="./recommendation.component.css">
-</head>
 
-<body (onmouseover)="Refresh()">
     <div id="div1">
         <h1 id="h11">Tax Savings Plans</h1>
     </div>
+
+
+<div id="page" (onload)="Refresh()">
+
 
     <div id="div2" *ngFor="let tax of taxes">
         <div id="tax1">
@@ -22,17 +20,16 @@
     
         <div id="div3" *ngFor="let advice of advices">
             <div id="advice">
-                <div id="ad1">{{advice.advice1}}</div>
-                <div id="ad2">{{advice.advice2}}</div>
-                <div id="ad3">{{advice.advice3}}</div>
-                <div id="ad4">{{advice.advice4}}</div>
-                <div id="ad5">{{advice.advice5}}</div>
-                <div id="ad6">{{advice.advice6}}</div>
-                <div id="ad7">{{advice.advice7}}</div>
+                <div id="ad1" class="md-2">{{advice.advice1}}</div>
+                <div id="ad2" class="md-2">{{advice.advice2}}</div>
+                <div id="ad3" class="md-2">{{advice.advice3}}</div>
+                <div id="ad4" class="md-2">{{advice.advice4}}</div>
+                <div id="ad5" class="md-2">{{advice.advice5}}</div>
+                <div id="ad6" class="md-2">{{advice.advice6}}</div>
+                <div id="ad7" class="md-2">{{advice.advice7}}</div>
             </div>
         </div>
 
 
-</body>
+</div>
 
-</html>

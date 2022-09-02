@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'; 
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
@@ -13,6 +13,9 @@ export class RecoService {
 
   baseUrl = "https://walletbooster.stackroute.io"
     url: string = this.baseUrl + "/recommendation-service/advices";
+    // baseUrl="http://localhost:8080"
+    // url: string = this.baseUrl + "/recommendation-service/advices";
+
     user : User[]=[];
     
     constructor(private http: HttpClient) {}

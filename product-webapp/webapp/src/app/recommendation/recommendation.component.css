@@ -1,160 +1,165 @@
 #div1 {
-    text-align: center;
-    height: 10%;
+  text-align: center;
+  height: 10%;
+}
+
+
+#page{
+  margin-top: 130px;
 }
 
 #div2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 80%;
-    height: 120px;
-    background-color: #44cba9 ;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: -100px;
-    border-radius: 30px;
-    text-align: center;
-    font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 80%;
+  height: 120px;
+  background-color: #44cba9 ;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: -100px;
+  border-radius: 30px;
+  text-align: center;
+  font-family: sans-serif;
 
-    font-size: 16px;
-    --outline: 2px solid white;
-    transition: outline-offset 200ms ease;
-    outline: var(--outline);
+  font-size: 16px;
+  --outline: 2px solid white;
+  transition: outline-offset 200ms ease;
+  outline: var(--outline);
 }
 
 #div2:hover{
-    background-color: #42b89b;
-    outline: var(--outline);
-    outline-offset: -6px;
+  background-color: #42b89b;
+  outline: var(--outline);
+  outline-offset: -6px;
 }
 
 #div3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 300px;
-    margin-top: 50px;
-    background-color: #a6d5f9;
-    border-radius: 30px;
-    font-family: sans-serif;
-    font-size: 16px;
-    --outline: 2px solid white;
-    transition: outline-offset 200ms ease;
-    outline: var(--outline);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 300px;
+  margin-top: 50px;
+  background-color: #a6d5f9;
+  border-radius: 30px;
+  font-family: sans-serif;
+  font-size: 16px;
+  --outline: 2px solid white;
+  transition: outline-offset 200ms ease;
+  outline: var(--outline);
 }
 
 #div3:hover{
-    background-color: #86bde8;
-    outline: var(--outline);
-    outline-offset: -6px;
+  background-color: #86bde8;
+  outline: var(--outline);
+  outline-offset: -6px;
 }
 
 
 @keyframes taadaa3 { 
-    0% {
-      opacity: 0;
-    }
-  
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 0;
   }
 
+  100% {
+    opacity: 1;
+  }
+}
+
 #advice{
-    margin-left: 40px;
-    margin-right: 40px;
-    gap: 50px;
-    
-    
+  margin-left: 40px;
+  margin-right: 40px;
+  gap: 50px;
+  
+  
 }
 
 #ad1{
-    animation: taadaa3 2s;
+  animation: taadaa3 2s;
 
 }
 
 #ad2{
-    animation: taadaa3 2s;
+  animation: taadaa3 2s;
 
 }
 
 #ad3{
-    animation: taadaa3 2s;
+  animation: taadaa3 2s;
 
 }
 
 #ad4{
-    animation: taadaa3 2s;
+  animation: taadaa3 2s;
 
 }
 
 #ad5{
-    animation: taadaa3 2s;
+  animation: taadaa3 2s;
 
 }
 
 #ad6{
-    animation: taadaa3 2s;
+  animation: taadaa3 2s;
 
 }
 
 #ad7{
-    animation: taadaa3 2s;
+  animation: taadaa3 2s;
 
 }
 
 @keyframes taadaa1 { 
-    0% {
-      opacity: 0;
-    }
-  
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 0;
   }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 
 #tax1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    animation: taadaa1 2s;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  animation: taadaa1 2s;
+  color: white;
 }
 
 @keyframes taadaa2 { 
-    0% {
-      opacity: 0;
-    }
-  
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 0;
   }
-      
 
-  #tax2{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    animation: taadaa2 4s;
-    color: white;
+  100% {
+    opacity: 1;
+  }
+}
+    
+
+#tax2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  animation: taadaa2 4s;
+  color: white;
 
 }
 
 #tax11{
-    color: black;
+  color: black;
 }
 
 #tax22{
-    color: black;
+  color: black;
 
 }
