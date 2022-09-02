@@ -3,7 +3,7 @@
 
 
     <div class="container-fluid">
-        <a href="/">
+        <a routerLink="/">
             <ul class="nav">
                 <li class="nav-item ml-5"><img src="https://i.ibb.co/HT8KZRP/logo6.png" alt="logo" width="50px"></li>
                 <li class="nav-item ml-4">
@@ -15,23 +15,23 @@
 
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link " href="/about">About Us</a>
+                <a class="nav-link " routerLink="/about">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/showblogs">Blogs</a>
+                <a class="nav-link" routerLink="/showblogs">Blogs</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/tax-calculator">Tax Calculator</a>
+                <a class="nav-link" routerLink="/tax-calculator">Tax Calculator</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" routerLink="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{userNameOnNavBar2}}
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/getprofile">Get Profile</a></li>
-                  <li><a class="dropdown-item" href="/profile-user">Edit Profile</a></li>
+                  <li><a class="dropdown-item" routerLink="/getprofile">Get Profile</a></li>
+                  <li><a class="dropdown-item" routerLink="/profile-user">Edit Profile</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="/logout" (click)="onLogout()">Logout</a></li>
+                  <li><a class="dropdown-item" routerLink="/logout" (click)="onLogout()">Logout</a></li>
                 </ul>
               </li>
 
