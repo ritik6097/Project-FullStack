@@ -106,7 +106,7 @@ public class TaxService {
             RES[1]=result2;
             this.userRepository.deleteAll();
             this.userRepository.save(tax);
-        } else if (((total1>1000000)&&(total1<=1250000)) && ((total1>1000000)&&(total1<=1250000))) {
+        } else if (((total1>1000000)&&(total1<=1250000)) && ((total2>1000000)&&(total2<=1250000))) {
             double totalTax1=(total1-1000000)*0.2;
             double totalTax2=(total2-1000000)*0.2;
             tax.setTax1(totalTax1);
@@ -119,7 +119,7 @@ public class TaxService {
             RES[1]=result2;
             this.userRepository.deleteAll();
             this.userRepository.save(tax);
-        } else if (((total1>1250000)&&(total1<=1500000)) && ((total1>1250000)&&(total1<=1500000))) {
+        } else if (((total1>1250000)&&(total1<=1500000)) && ((total2>1250000)&&(total2<=1500000))) {
             double totalTax1=(total1-1250000)*0.25;
             double totalTax2=(total2-1250000)*0.25;
             tax.setTax1(totalTax1);

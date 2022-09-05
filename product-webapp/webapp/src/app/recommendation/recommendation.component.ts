@@ -84,9 +84,7 @@ export class RecommendationComponent  {
 
   }
 
-  Refresh(){
-    window.location.reload();
-}
+
 
   
   

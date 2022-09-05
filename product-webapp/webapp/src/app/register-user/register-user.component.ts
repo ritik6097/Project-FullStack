@@ -61,5 +61,6 @@ else{
   
   onsubmit(){
     this.route.navigateByUrl("/login")
+    localStorage.setItem("register", "success")
   }
 }

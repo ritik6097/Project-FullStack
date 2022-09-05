@@ -5,10 +5,7 @@
     margin-top: 3%;
     height: 600px;
     margin-bottom: 100px;
-    border-top-right-radius:  60px;
-    border-bottom-right-radius:  60px;
-    border-bottom-left-radius: 60px;
-    border-top-left-radius: 60px;
+    border-radius: 20px;
 }
 .col-3{
    background-color:#397ef6; 

@@ -18,7 +18,8 @@ export class Navbar2Component implements OnInit {
 
   onLogout(){
     
-    this.route.navigateByUrl("/");
+    // this.route.navigateByUrl("/");
+    window.location.href = "/"
     localStorage.clear();
   }
 

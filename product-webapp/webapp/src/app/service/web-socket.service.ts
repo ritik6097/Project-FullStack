@@ -12,7 +12,7 @@ export class WebSocketService {
   constructor() { }
 
   public openWebSocket(){
-    this.webSocket = new WebSocket('ws://walletbooster.stackroute.io:8086/chat');
+    this.webSocket = new WebSocket('ws://43.205.168.104:8086/chat');
 
     this.webSocket.onopen = (event) => {
       console.log('Open: ', event);

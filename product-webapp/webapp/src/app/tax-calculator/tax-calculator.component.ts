@@ -139,12 +139,18 @@ export class TaxCalculatorComponent implements OnInit {
     })
 
 
-
-  }
-
-  onSubmit(){
     this.route.navigateByUrl('/recommendation')
+    this.route.navigateByUrl('/home')
+    // window.location.href = "/"
+    this.route.navigateByUrl('/recommendation')
+
+
   }
+
+  // onSubmit(){
+  //   // this.route.navigateByUrl('/recommendation')
+  //   // window.location.href = "/recommendation"
+  // }
     
   previous(){
     this.step=this.step-1;

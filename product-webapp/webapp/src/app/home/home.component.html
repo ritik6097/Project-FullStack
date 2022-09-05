@@ -10,8 +10,12 @@
       <h1 class="display-5 fw-bold lh-1 mb-3">Save & Invest your money with a single platform </h1>
       <p class="lead">Best tax saving options as per your needs.</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Get Started</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Learn More</button>
+        <a routerLink="/register-user">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Get Started</button>
+        </a>
+        <a routerLink="/about">
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Learn More</button>
+        </a>
       </div>
     </div>
   </div>
@@ -200,13 +204,13 @@
 
           <div class="row justify-content-center pt-4">
             <div class="col-12 col-md-8">
-              <form action="https://formspree.io/f/mbjbdrdr" method="POST">
+              <form  id="contactform" action="https://getform.io/f/95c24fd4-7809-432f-aab4-06e4b7d73ec8" method="POST">
                 <div class="row">
                   <div class="col-12 col-md">
-                    <input type="text" name="Name" class="form-control" placeholder="Name">
+                    <input type="text" name="name" class="form-control" placeholder="Name">
                   </div>
                   <div class="col-12 col-md mt-4 mt-md-0">
-                    <input type="text" name="_replyto" name="Email" class="form-control" placeholder="Email">
+                    <input type="email" name="_replyto" class="form-control" placeholder="Email">
                   </div>
                 </div>
 
@@ -235,8 +239,8 @@
   </div>
 </section>
 
-
-<!-- Chat Button -->
+<div *ngIf="checkchat!== null">
+  <!-- Chat Button -->
 <div class="wb-chat" style="position: fixed; right: 40px; bottom: 40px;">
 
   <a routerLink="/chatservice">
@@ -246,3 +250,5 @@
 
 
 </div>
+</div>
+

@@ -55,6 +55,7 @@ this.snack.open(data.message, "Remove", {
   }
 
   onsubmit(){
-    this.route.navigateByUrl("/")
+    // this.route.navigateByUrl("/")
+    window.location.href = "/"
   }
 }

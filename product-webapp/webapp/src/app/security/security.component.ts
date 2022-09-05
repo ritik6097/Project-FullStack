@@ -41,16 +41,16 @@ export class SecurityComponent implements OnInit {
       this.tkn = data
       // console.log(this.tkn)
       localStorage.setItem("token", this.tkn)
-      // localStorage.setItem("user-email", logindata.value.email)
+      localStorage.setItem("user-email", logindata.value.email)
       this.sendEmailToUser(localStorage.getItem('user-email'));
         // route to home or profile as per their frequency
-      if(localStorage.getItem('user-email')==logindata.value.email)
+      if(localStorage.getItem("user-email")===logindata.value.email && localStorage.getItem("register")==="success")
       {
-      this.route.navigateByUrl("/");
+        this.route.navigateByUrl("/profile-user");
       }
       else{
-        this.route.navigateByUrl("/profile-user");
-        localStorage.setItem("user-email", logindata.value.email)
+        // this.route.navigateByUrl("/");
+        window.location.href = "/"
       }
       
     }, () => {

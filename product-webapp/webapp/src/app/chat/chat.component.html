@@ -2,41 +2,48 @@
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-3">
+  <div class="row">
+      <div class="col-3 px-4">
 
-          <img
-        src="../../assets/img/user.png"
-        alt="still loading"
-        id="img"
-      />
-           
-            <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
+        <img
+      src="{{ imgsList[ no ] }}"
+      alt="still loading"
+      id="img"
+    />
+         
+          <form (ngSubmit)="sendMessage(sendForm)" #sendForm="ngForm">
 
-            <input type="text" class="form-control" placeholder="Enter Your Name" name="user" id="input-user" ngModel>
+          <input type="text" class="form-control mt-5" placeholder="Enter Your Name" name="user" id="input-user" ngModel>
 
-            <input type="text" class="form-control" placeholder="Enter Your Message" name="message" id="input-message" ngModel>
+          <input type="text" class="form-control" placeholder="Enter Your Message" name="message" id="input-message" ngModel>
 
-            <button type="submit" class="btn btn-light btn-rounded" id="sendbtn">Send</button>
+          <button type="submit" class="btn btn-light btn-rounded" id="sendbtn">Send</button>
 
-        </form>
-        </div>
-  <div class="col-9">
-    <h1 style="text-align: center; color: blue;"> Welcome to Chat Service</h1><hr>
-
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item" *ngFor="let chatMessage of webSocketService.chatMessages">
-            <strong>{{chatMessage.user}}: </strong>
-            <span>{{chatMessage.message}}</span>
-        </li>
-    </ul>
-   
-  
-    
-   
-      
+      </form>
+      </div>
+<div class="col-9">
+  <div *ngIf="msg!==null; else elseBlock">    
+    <h1 class="text-center mt-2 text-primary"> Hi  {{msg.split("@")[0]}}</h1><hr>
   </div>
+<ng-template #elseBlock>
+<h1 class="text-center mt-2 text-primary"> Welcome to Chat Service</h1><hr>
+</ng-template>
+
+
+<div style="overflow-y:scroll; height:500px">
+  <ul class="list-group list-group-flush">
+      <li class="list-group-item mb-2 rounded-2" *ngFor="let chatMessage of webSocketService.chatMessages;">
+          <strong>{{chatMessage.user}}: </strong>
+          <span>{{chatMessage.message}}</span>
+      </li>
+  </ul>
+</div>   
+
   
-  
+ 
+    
+</div>
+
+
 
 

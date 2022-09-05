@@ -26,9 +26,10 @@ img{
 }
 
 .container{
-    padding: 4%;
+    padding: 15px 5px 40px 5px;
     background: #f9f9f9;
-    border-radius: 80px;
+    border-radius: 25px;
+    /* margin: 0px 300px 0px 150px ; */
 }
 
 .form{
@@ -45,6 +46,10 @@ img{
     justify-content: center;
     align-content: center;
     gap: 20px;
+    margin-left: 60px;
+    padding-left: 40px;
+    padding-right: 60px;
+    margin-right: 60px;
 }
 .topbar1{
     margin-top: 2%;

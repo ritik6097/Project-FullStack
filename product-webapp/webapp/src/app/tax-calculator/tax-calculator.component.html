@@ -1,9 +1,8 @@
 <h1>Income Tax Calculator</h1>
-    
-<div class="container">
-    <div (ngSubmit)="submit()" >
+<div class="container pd-5">
+    <div (ngSubmit)="submit()" [formGroup]="multistep">
         <!-- PAGE 1(BASIC DETAILS) -->
-    
+       
         <div class="topbar1" *ngIf="step==1" >
             <div>
                 <div id="current">
@@ -31,42 +30,50 @@
                     <div id="label">
                         1. Which Financial Year do you want to calculate taxes for?
                     </div>
-                    <input type="radio" formControlName="Year" value="FY 2022-2023"> FY 2022-2023<br>
-                    <span class="text-danger" *ngIf="submitted && userDetails.Year.errors?.required ">Required </span><br><br>
-                    <input type="radio" formControlName="Year" value="FY 2021-2022"> FY 2021-2022<br>
-                    <span class="text-danger" *ngIf="submitted && userDetails.Year.errors?.required ">Required </span><br><br>
+
+                    <div class="ml-5 mt-3">
+
+                        <input type="radio" class="form-check-input" formControlName="Year" value="FY 2022-2023"> FY 2022-2023<br>
+                        <!-- <span class="text-danger" *ngIf="submitted && userDetails.Year.errors?.required ">Required </span><br><br> -->
+                        <input type="radio" class="form-check-input" formControlName="Year" value="FY 2021-2022"> FY 2021-2022<br>
+                        <!-- <span class="text-danger" *ngIf="submitted && userDetails.Year.errors?.required ">Required </span><br><br> -->
+                    </div>
                 </div>
-                
+
                 <div>
                     <div id="label">
-                        1. What is your age ?
+                        2. What is your age ?
                     </div>
-                    <input type="radio" formControlName="Age" value="18 to 60"> 18 to 60<br>
-                    <!-- <span class="text-danger" *ngIf="submitted && userDetails.Age.errors?.required ">Required </span><br><br> -->
-                    <input type="radio" formControlName="Age" value="60 to 80"> 60 to 80<br>
-                    <!-- <span class="text-danger" *ngIf="submitted && userDetails.Age.errors?.required ">Required </span><br><br> -->
-                    <input type="radio" formControlName="Age" value="80 above"> 80 above<br>
-                    <!-- <span class="text-danger" *ngIf="submitted && userDetails.Age.errors?.required ">Required </span><br><br> -->
+
+                    <div class="ml-5 mt-3">
+
+                        <input type="radio" class="form-check-input" formControlName="Age" value="18 to 60"> 18 to 60<br>
+                        <!-- <span class="text-danger" *ngIf="submitted && userDetails.Age.errors?.required ">Required </span><br><br> -->
+                        <input type="radio" class="form-check-input" formControlName="Age" value="60 to 80"> 60 to 80<br>
+                        <!-- <span class="text-danger" *ngIf="submitted && userDetails.Age.errors?.required ">Required </span><br><br> -->
+                        <input type="radio" class="form-check-input" formControlName="Age" value="80 above"> 80 above<br>
+                        <!-- <span class="text-danger" *ngIf="submitted && userDetails.Age.errors?.required ">Required </span><br><br> -->
+                    </div>
+
+                    
                 </div>
 
-
-
                 <div id="image">
-                    <img src="https://i.ibb.co/5xBL1xR/undraw-savings-re-eq4w.png" alt="loading" width="400px">
+                    <img src="https://i.ibb.co/F0YW7xY/undraw-Calculator-re-alsc-removebg-preview.png" alt="loading" width="400px">
                 </div>
 
             </div>
         </div>
 
-        <div id="submit" *ngIf="step==1">
+        <div class="mx-5 px-5" *ngIf="step==1">
     
             <button type="submit" (click)="submit()"> Go to Next Step</button>
         </div>
 
-        <div id="box">
+        <!-- <div id="box">
 
-        </div>
-    
+        </div> -->
+       
         <!-- PAGE 2(INCOME DETAILS) -->
 
         <div class="topbar2" *ngIf="step==2" >
@@ -87,13 +94,13 @@
         </div>
         <div class="form" *ngIf="step==2">
 
-            <div class="col" >
+            <div class="col-4" >
                 <div>
                     <div id="label">
                         Income from Salary
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="IFS"><br>
+                    <input type="text" placeholder=0 size="30px" class="form-control" formControlName="IFS"><br>
                     <!-- <span class="text-danger" *ngIf="submitted && taxDetails.IFS.errors?.required && submitted && taxDetails.IFS.invalid">Required & Only Digits are Allowed </span> -->
             
                 </div>
@@ -103,7 +110,7 @@
                         Income from Interest
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="IFI"  ><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="IFI"  ><br>
                     <!-- <span class="text-danger" *ngIf="submitted && taxDetails.IFI.errors?.required && submitted && taxDetails.IFI.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
@@ -112,7 +119,7 @@
                         Interest Paid on Home Loan
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="IPHL"><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="IPHL"><br>
                     <!-- <span class="text-danger" *ngIf="submitted && taxDetails.IPHL.errors?.required && submitted && taxDetails.IPHL.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
@@ -121,19 +128,19 @@
                         Interest Paid on Loan
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="IPL" ><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="IPL" ><br>
                     <!-- <span class="text-danger" *ngIf="submitted && taxDetails.IPL.errors?.required && submitted && taxDetails.IPL.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
             </div>
 
-            <div class="col">
+            <div class="col-4">
                 <div>
                     <div id="label">
                         Exemptions & Deductions from Salary
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="EDS"><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="EDS"><br>
                     <!-- <span class="text-danger" *ngIf="submitted && taxDetails.EDS.errors?.required && submitted && taxDetails.EDS.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
@@ -142,7 +149,7 @@
                         Other Income
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="OI" ><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="OI" ><br>
                     <!-- <span class="text-danger" *ngIf="submitted && taxDetails.OI.errors?.required && submitted && taxDetails.OI.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
@@ -151,7 +158,7 @@
                         Rental Income Received
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="RI" ><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="RI" ><br>
                     <!-- <span class="text-danger" *ngIf="submitted && taxDetails.RI.errors?.required && submitted && taxDetails.RI.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
@@ -160,7 +167,7 @@
                         Income from Digital Assets
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="IDA" ><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="IDA" ><br>
                     <!-- <span class="text-danger" *ngIf="submitted && taxDetails.IDA.errors?.required && submitted && taxDetails.IDA.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
             </div>
@@ -173,9 +180,9 @@
             <button type="submit" (click)="submit()"> Go to Next Step</button>
         </div>
 
-        <div id="box">
+        <!-- <div id="box">
 
-        </div>
+        </div> -->
 
 
 
@@ -199,14 +206,14 @@
         </div>
         <div class="form" *ngIf="step==3">
 
-            <div class="col" >
+            <div class="col-4" >
                 <div>
                     <div id="label">
                         Basic Deductions -80C
     
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="BD"><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="BD"><br>
                     <!-- <span class="text-danger" *ngIf="submitted && deductionDetails.BD.errors?.required && submitted && deductionDetails.BD.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
@@ -215,7 +222,7 @@
                         Medical Insurance - 80D
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="MI" ><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="MI" ><br>
                     <!-- <span class="text-danger" *ngIf="submitted && deductionDetails.MI.errors?.required && submitted && deductionDetails.MI.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
@@ -224,7 +231,7 @@
                         Interest On Educational Loan
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="IEL" ><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="IEL" ><br>
                     <!-- <span class="text-danger" *ngIf="submitted && deductionDetails.IEL.errors?.required && submitted && deductionDetails.IEL.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
@@ -233,19 +240,19 @@
                         Employee's Contribution to NPS -80CCD
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="NPS" ><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="NPS" ><br>
                     <!-- <span class="text-danger" *ngIf="submitted && deductionDetails.NPS.errors?.required && submitted && deductionDetails.NPS.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
             </div>
 
-            <div class="col" >
+            <div class="col-4" >
                 <div>
                     <div id="label">
                         Interest from Deposits -80TTA
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="IFD" ><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="IFD" ><br>
                     <!-- <span class="text-danger" *ngIf="submitted && deductionDetails.IFD.errors?.required && submitted && deductionDetails.IFD.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
@@ -254,7 +261,7 @@
                         Donations to Charity -80G
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="DTC" ><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="DTC" ><br>
                     <!-- <span class="text-danger" *ngIf="submitted && deductionDetails.DTC.errors?.required && submitted && deductionDetails.DTC.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
@@ -263,7 +270,7 @@
                         Interest on Housing Loan -80EEA
                     </div>
 
-                    <input type="text" placeholder="0" size="30px" id="in" formControlName="IHL" ><br>
+                    <input type="text" placeholder="0" size="30px" class="form-control" formControlName="IHL" ><br>
                     <!-- <span class="text-danger" *ngIf="submitted && deductionDetails.IHL.errors?.required && submitted && deductionDetails.IHL.invalid">Required & Only Digits are Allowed </span> -->
                 </div>
 
@@ -275,17 +282,15 @@
 
         <div id="submit" *ngIf="step==3">
             <button type="previous" (click)="previous()"> Previous</button>
-            <button type="submit" (click)="calculate()" (click)="onSubmit()" > Calculate</button>
+            <button type="submit" (click)="calculate()"  > Calculate</button>
         </div>
 
-        <div id="box">
+        <!-- <div id="box">
 
-        </div>
-
-       
+        </div> -->
     </div>  
 
-    <!-- <div id="box2">
-
-    </div> -->
 </div>
+
+<br>
+<br>

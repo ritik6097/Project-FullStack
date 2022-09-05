@@ -16,11 +16,11 @@
      
       <div class="col-sm-6 " >
         <input required=""  #firstName="ngModel" ngModel=""  type="text" class="form-control" id="firstName" [(ngModel)] = "user.firstName"  value="{{firstName}}" placeholder="firstname" name="firstname">
-        <span *ngIf="firstName.invalid && firstName.touched" class="error" style="color:red ;">firstName is requred</span>
+        <span *ngIf="firstName.invalid && firstName.touched" class="error" style="color:red ;">firstName is required</span>
       </div>
     <div class="col-sm-6">
       <input required="" #lastName="ngModel" ngModel type="text" class="form-control" id="lastName" [(ngModel)] = "user.lastName" placeholder="lastName" name="lastName">
-      <span *ngIf="lastName.invalid && lastName.touched" class="error" style="color:red ;">lastName is requred</span>
+      <span *ngIf="lastName.invalid && lastName.touched" class="error" style="color:red ;">lastName is required</span>
     </div>
     </div>
   <div class="form-group row">

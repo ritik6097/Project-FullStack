@@ -3,6 +3,50 @@
   height: 10%;
 }
 
+.container{
+  background-color: #caf0f8;
+  /* border: 1px solid black; */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.oldreg{
+  background-color: white;
+  /* border: 1px solid black; */
+  margin-right: 5px;
+  border-radius: 5px;
+}
+.newreg{
+  background-color: white;
+  /* border: 1px solid black; */
+  margin-left: 5px;
+  border-radius: 5px;
+
+}
+
+.oldreg:hover{
+  background-color: #4285F4;
+  color: white;
+}
+
+.newreg:hover{
+  background-color: #4285F4;
+  color: white;
+}
+
+
+.accordion-body{
+  color: #302ae0;
+}
+
+.head{
+  background-color: #49478d;
+
+}
+
+.list-group-item:hover {
+  background-color: #302ae0;
+}
 
 #page{
   margin-top: 130px;
